@@ -10,19 +10,46 @@ It all starts blurring together, honestly. Granted, this is a personal preferenc
 
 
 # Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+When I create a codebase, one of my goals is for others to be able to pull the code and "hit the green play button" and have everything just work.
+I'm not sure how close I am with this codebase, but that goal hasn't been a priority since I'm the only person developing on it. 
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+I think it's close. Try these steps:
+
+1. clone the repo
+2. cd pipelines
+3. npm run local
+
+*Note*: Developing azdo extensions, and more specifically debugging them, is kind of wonky.The extension _has_ to run inside a azdo context. I am experimenting with "mocking" this for local development and debugging.
+
+It is very crude and very clunky, but has helped me a good bit.
+
+There is an alternative method to build which involves setting an iframe to "localhost" and publishing the extension the marketplace. I haven't done than in some time, and it may be a better experience now. At the time, I found it to be cumbersome. Granted - I had no idea what I was doing then.
+
+
 
 # Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+I might opensource this thing one day and make the extension public. 
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+# Links
+These are some random links that I keep in a bookmark folder on my dev machine. I haven't bothered titling them here because I assume you will bookmark them if you find them useful.
+
+https://docs.microsoft.com/en-us/azure/devops/extend/develop/manifest?view=azure-devops#:~:text=Every%20extension%20has%20a%20JSON,your%20extensions%20to%20Azure%20DevOps.&text=Check%20out%20our%20newest%20documentation,the%20Azure%20DevOps%20Extension%20SDK.
+https://docs.microsoft.com/en-us/javascript/api/azure-devops-extension-sdk/
+https://developer.microsoft.com/en-us/azure-devops/develop/styles
+https://developer.microsoft.com/en-us/azure-devops/
+https://developer.microsoft.com/en-us/azure-devops/components
+https://developer.microsoft.com/en-us/azure-devops/components/filter
+https://developer.microsoft.com/en-us/fluentui#/styles/web/icons
+https://developer.microsoft.com/en-us/fluentui#/controls/web/icon
+https://docs.microsoft.com/en-us/azure/devops/extend/get-started/node?view=azure-devops
+https://docs.microsoft.com/en-us/azure/devops/extend/publish/overview?view=azure-devops
+https://docs.microsoft.com/en-us/javascript/api/azure-devops-extension-api/?view=azdevops-ext-latest
+https://docs.microsoft.com/en-us/azure/devops/extend/develop/work-with-urls?view=azure-devops&tabs=http#how-to-get-an-organizations-url
+
+
+### quick note
+if you look at my commit history, you might notice a PAT from azdo in the repo. It is expired. I know this is bad practice. Keep in mind this has only been for my personal use and development. The pipeline I have that publishes this extension to the market place has the real token in a secret variable. 
+
+
+
+:rocket: Happy Coding!
