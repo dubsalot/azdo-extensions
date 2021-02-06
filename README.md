@@ -44,7 +44,7 @@ These are some random links that I keep in a bookmark folder on my dev machine. 
 - https://docs.microsoft.com/en-us/azure/devops/extend/get-started/node?view=azure-devops
 - https://docs.microsoft.com/en-us/azure/devops/extend/publish/overview?view=azure-devops
 - https://docs.microsoft.com/en-us/javascript/api/azure-devops-extension-api/?view=azdevops-ext-latest
-- https://docs.microsoft.com/en-us/azure/devops/extend/develop/work-with-urls?view=azure-devops&tabs=http#how-to-get-an-organizations-url
+- [working with urls](https://docs.microsoft.com/en-us/azure/devops/extend/develop/work-with-urls?view=azure-devops&tabs=http#how-to-get-an-organizations-url)
 
 
 ### Quick Note
