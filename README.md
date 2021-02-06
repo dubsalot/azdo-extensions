@@ -1,12 +1,12 @@
 # Introduction 
 This project is an extension for [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/) henceforth referred to as azdo or AzDo. The goal is to consolidate some of the azdo screens into one hub. AzDo is a great product made out of 100% awesome, *but* I find navigating some of the screens that I use all day everyday to be annoying. Granted, some of this is because of the way my company organizes and names its projects.
 
+### Screenshot
+![extension screenshot](docs/screens/screenshot.png)
+
 For example, we have 80 applications in my department. Each one has a repository, a release definition, and a build definition. We are using the classic builds/releases. The are all named with their "app code" which is a thing internal to my company. An example might be WMABC. Thefore, I will have a repo, a build defintion, and a release definition named WMABC along with 79 other applications. Each section in AzDo has it's own UI where a user can search for what they are looking for. 
 
 It all starts blurring together, honestly. Granted, this is a personal preference, I'd rather have those things in one place with one search box. That's the primary goal of the extension.
-
-### Screenshot
-![extension screenshot](docs/screens/screenshot.png)
 
 
 # Getting Started
@@ -48,7 +48,7 @@ These are some random links that I keep in a bookmark folder on my dev machine. 
 
 
 ### Quick Note
-if you look at my commit history, you might notice a PAT from azdo in the repo :shushing_face: It is expired. I know this is bad practice :zipper-mouth: Keep in mind this has only been for my personal use and development. The pipeline I have that publishes this extension to the market place has the real token in a secret variable. 
+if you look at my commit history, you might notice a PAT from azdo in the repo :shushing_face: It is expired. I know this is bad practice. Keep in mind this has only been for my personal use and development. The pipeline I have that publishes this extension to the market place has the real token in a secret variable. 
 
 
 
