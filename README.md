@@ -33,22 +33,22 @@ I might opensource this thing one day and make the extension public.
 # Links
 These are some random links that I keep in a bookmark folder on my dev machine. I haven't bothered titling them here because I assume you will bookmark them if you find them useful.
 
-https://docs.microsoft.com/en-us/azure/devops/extend/develop/manifest?view=azure-devops#:~:text=Every%20extension%20has%20a%20JSON,your%20extensions%20to%20Azure%20DevOps.&text=Check%20out%20our%20newest%20documentation,the%20Azure%20DevOps%20Extension%20SDK.
-https://docs.microsoft.com/en-us/javascript/api/azure-devops-extension-sdk/
-https://developer.microsoft.com/en-us/azure-devops/develop/styles
-https://developer.microsoft.com/en-us/azure-devops/
-https://developer.microsoft.com/en-us/azure-devops/components
-https://developer.microsoft.com/en-us/azure-devops/components/filter
-https://developer.microsoft.com/en-us/fluentui#/styles/web/icons
-https://developer.microsoft.com/en-us/fluentui#/controls/web/icon
-https://docs.microsoft.com/en-us/azure/devops/extend/get-started/node?view=azure-devops
-https://docs.microsoft.com/en-us/azure/devops/extend/publish/overview?view=azure-devops
-https://docs.microsoft.com/en-us/javascript/api/azure-devops-extension-api/?view=azdevops-ext-latest
-https://docs.microsoft.com/en-us/azure/devops/extend/develop/work-with-urls?view=azure-devops&tabs=http#how-to-get-an-organizations-url
+-https://docs.microsoft.com/en-us/azure/devops/extend/develop/manifest?view=azure-devops#:~:text=Every%20extension%20has%20a%20JSON,your%20extensions%20to%20Azure%20DevOps.&text=Check%20out%20our%20newest%20documentation,the%20Azure%20DevOps%20Extension%20SDK.
+-https://docs.microsoft.com/en-us/javascript/api/azure-devops-extension-sdk/
+-https://developer.microsoft.com/en-us/azure-devops/develop/styles
+-https://developer.microsoft.com/en-us/azure-devops/
+-https://developer.microsoft.com/en-us/azure-devops/components
+-https://developer.microsoft.com/en-us/azure-devops/components/filter
+-https://developer.microsoft.com/en-us/fluentui#/styles/web/icons
+-https://developer.microsoft.com/en-us/fluentui#/controls/web/icon
+-https://docs.microsoft.com/en-us/azure/devops/extend/get-started/node?view=azure-devops
+-https://docs.microsoft.com/en-us/azure/devops/extend/publish/overview?view=azure-devops
+-https://docs.microsoft.com/en-us/javascript/api/azure-devops-extension-api/?view=azdevops-ext-latest
+-https://docs.microsoft.com/en-us/azure/devops/extend/develop/work-with-urls?view=azure-devops&tabs=http#how-to-get-an-organizations-url
 
 
-### quick note
-if you look at my commit history, you might notice a PAT from azdo in the repo. It is expired. I know this is bad practice. Keep in mind this has only been for my personal use and development. The pipeline I have that publishes this extension to the market place has the real token in a secret variable. 
+### Quick Note
+if you look at my commit history, you might notice a PAT from azdo in the repo :shushing_face: It is expired. I know this is bad practice :zipper-mouth: Keep in mind this has only been for my personal use and development. The pipeline I have that publishes this extension to the market place has the real token in a secret variable. 
 
 
 
