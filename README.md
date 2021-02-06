@@ -33,7 +33,7 @@ I might opensource this thing one day and make the extension public.
 # Links
 These are some random links that I keep in a bookmark folder on my dev machine. I haven't bothered titling them here because I assume you will bookmark them if you find them useful.
 
-- https://docs.microsoft.com/en-us/azure/devops/extend/develop/manifest?view=azure-devops#:~:text=Every%20extension%20has%20a%20JSON,your%20extensions%20to%20Azure%20DevOps.&text=Check%20out%20our%20newest%20documentation,the%20Azure%20DevOps%20Extension%20SDK.
+- [manifest reference](https://docs.microsoft.com/en-us/azure/devops/extend/develop/manifest?view=azure-devops)
 - https://docs.microsoft.com/en-us/javascript/api/azure-devops-extension-sdk/
 - https://developer.microsoft.com/en-us/azure-devops/develop/styles
 - https://developer.microsoft.com/en-us/azure-devops/
