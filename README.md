@@ -9,7 +9,7 @@ It all starts blurring together, honestly. Granted, this is a personal preferenc
 ![extension screenshot](docs/screens/screenshot.png)
 
 ### In action
-![extension in action](docs/screens/democlip.mp4)
+![extension in action](docs/screens/democlip.gif)
 
 # Getting Started
 TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
