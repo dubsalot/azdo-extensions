@@ -1,0 +1,12 @@
+.azdoList.builds .bolt-header-title {
+    color:default;
+}
+
+.buildStages
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}

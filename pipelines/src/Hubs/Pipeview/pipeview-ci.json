@@ -1,0 +1,23 @@
+{
+    "contributions": [
+        {
+            "id": "hub",
+            "type": "ms.vss-web.hub",
+            "targets": [
+                ".dubsalot-hub-groub"
+            ],
+            "includes": [
+                "ms.vss-tfs-web.tfs-page-data-service",
+                "ms.vss-features.host-navigation-service",
+                "ms.vss-features.extension-data-service",
+                "ms.vss-features.host-dialog-service"
+            ],
+            "properties": {
+                "name": "<_EXTENSION_PIPELINE_NAME_>",
+                "uri": "dist/Pipeview/Pipeview.html",
+                "icon": "asset://static/<_EXTENSION_PIPELINE_ICON_>",
+                "supportsMobile": true
+            }
+        }
+    ]
+}

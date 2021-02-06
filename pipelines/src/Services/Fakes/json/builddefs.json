@@ -1,0 +1,1052 @@
+{
+    "count": 3,
+    "value": [
+        {
+            "_links": {
+                "self": {
+                    "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/Definitions/16?revision=2"
+                },
+                "web": {
+                    "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_build/definition?definitionId=16"
+                },
+                "editor": {
+                    "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_build/designer?id=16&_a=edit-build-definition"
+                },
+                "badge": {
+                    "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/status/16"
+                }
+            },
+            "latestBuild": {
+                "_links": {
+                    "self": {
+                        "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/Builds/493"
+                    },
+                    "web": {
+                        "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_build/results?buildId=493"
+                    },
+                    "sourceVersionDisplayUri": {
+                        "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/builds/493/sources"
+                    },
+                    "timeline": {
+                        "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/builds/493/Timeline"
+                    },
+                    "badge": {
+                        "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/status/16"
+                    }
+                },
+                "properties": {},
+                "tags": [],
+                "validationResults": [],
+                "plans": [
+                    {
+                        "planId": "3ff2ff6e-317d-459d-9483-cfbdb5f5e00e"
+                    }
+                ],
+                "triggerInfo": {},
+                "id": 493,
+                "buildNumber": "493",
+                "status": "completed",
+                "result": "succeeded",
+                "queueTime": "2020-09-07T02:00:40.1049268Z",
+                "startTime": "2020-09-07T02:00:47.4947114Z",
+                "finishTime": "2020-09-07T02:01:03.335128Z",
+                "url": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/Builds/493",
+                "definition": {
+                    "drafts": [],
+                    "id": 16,
+                    "name": "Ease-CI",
+                    "url": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/Definitions/16?revision=2",
+                    "uri": "vstfs:///Build/Definition/16",
+                    "path": "\\",
+                    "type": "build",
+                    "queueStatus": "enabled",
+                    "revision": 2,
+                    "project": {
+                        "id": "636e1096-9319-432d-ac44-cd220ff75d41",
+                        "name": "Ease",
+                        "description": "Code to make work easier. Better description at a later time.",
+                        "url": "https://dubsalot.visualstudio.com/_apis/projects/636e1096-9319-432d-ac44-cd220ff75d41",
+                        "state": "wellFormed",
+                        "revision": 134,
+                        "visibility": "private",
+                        "lastUpdateTime": "2020-02-16T04:15:14.413Z"
+                    }
+                },
+                "project": {
+                    "id": "636e1096-9319-432d-ac44-cd220ff75d41",
+                    "name": "Ease",
+                    "description": "Code to make work easier. Better description at a later time.",
+                    "url": "https://dubsalot.visualstudio.com/_apis/projects/636e1096-9319-432d-ac44-cd220ff75d41",
+                    "state": "wellFormed",
+                    "revision": 134,
+                    "visibility": "private",
+                    "lastUpdateTime": "2020-02-16T04:15:14.413Z"
+                },
+                "uri": "vstfs:///Build/Build/493",
+                "sourceBranch": "refs/heads/master",
+                "sourceVersion": "961e72ce1ff1545f6e8dad6f0e638d17621c3d80",
+                "queue": {
+                    "id": 89,
+                    "name": "Azure Pipelines",
+                    "pool": {
+                        "id": 11,
+                        "name": "Azure Pipelines",
+                        "isHosted": true
+                    }
+                },
+                "priority": "normal",
+                "reason": "manual",
+                "requestedFor": {
+                    "displayName": "wes.goodwin",
+                    "url": "https://spsprodeus27.vssps.visualstudio.com/A2714ae97-d05a-4ba0-8765-84ad70fd4044/_apis/Identities/d04a85e4-ae1e-48e4-b097-efb311db0327",
+                    "_links": {
+                        "avatar": {
+                            "href": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2"
+                        }
+                    },
+                    "id": "d04a85e4-ae1e-48e4-b097-efb311db0327",
+                    "uniqueName": "wes.goodwin@gmail.com",
+                    "imageUrl": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2",
+                    "descriptor": "msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2"
+                },
+                "requestedBy": {
+                    "displayName": "wes.goodwin",
+                    "url": "https://spsprodeus27.vssps.visualstudio.com/A2714ae97-d05a-4ba0-8765-84ad70fd4044/_apis/Identities/d04a85e4-ae1e-48e4-b097-efb311db0327",
+                    "_links": {
+                        "avatar": {
+                            "href": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2"
+                        }
+                    },
+                    "id": "d04a85e4-ae1e-48e4-b097-efb311db0327",
+                    "uniqueName": "wes.goodwin@gmail.com",
+                    "imageUrl": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2",
+                    "descriptor": "msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2"
+                },
+                "lastChangedDate": "2020-09-07T02:01:03.75Z",
+                "lastChangedBy": {
+                    "displayName": "Microsoft.VisualStudio.Services.TFS",
+                    "url": "https://spsprodeus27.vssps.visualstudio.com/A2714ae97-d05a-4ba0-8765-84ad70fd4044/_apis/Identities/00000002-0000-8888-8000-000000000000",
+                    "_links": {
+                        "avatar": {
+                            "href": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA"
+                        }
+                    },
+                    "id": "00000002-0000-8888-8000-000000000000",
+                    "uniqueName": "00000002-0000-8888-8000-000000000000@2c895908-04e0-4952-89fd-54b0046d6288",
+                    "imageUrl": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA",
+                    "descriptor": "s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA"
+                },
+                "parameters": "{\"system.debug\":\"false\"}",
+                "orchestrationPlan": {
+                    "planId": "3ff2ff6e-317d-459d-9483-cfbdb5f5e00e"
+                },
+                "logs": {
+                    "id": 0,
+                    "type": "Container",
+                    "url": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/builds/493/logs"
+                },
+                "repository": {
+                    "id": "2f4124be-ba5c-4617-a13c-c661b72c8800",
+                    "type": "TfsGit",
+                    "name": "powershell-modules",
+                    "url": "https://dubsalot.visualstudio.com/Ease/_git/powershell-modules",
+                    "clean": null,
+                    "checkoutSubmodules": false
+                },
+                "keepForever": true,
+                "retainedByRelease": false,
+                "triggeredByBuild": null
+            },
+            "latestCompletedBuild": {
+                "_links": {
+                    "self": {
+                        "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/Builds/493"
+                    },
+                    "web": {
+                        "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_build/results?buildId=493"
+                    },
+                    "sourceVersionDisplayUri": {
+                        "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/builds/493/sources"
+                    },
+                    "timeline": {
+                        "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/builds/493/Timeline"
+                    },
+                    "badge": {
+                        "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/status/16"
+                    }
+                },
+                "properties": {},
+                "tags": [],
+                "validationResults": [],
+                "plans": [
+                    {
+                        "planId": "3ff2ff6e-317d-459d-9483-cfbdb5f5e00e"
+                    }
+                ],
+                "triggerInfo": {},
+                "id": 493,
+                "buildNumber": "493",
+                "status": "completed",
+                "result": "succeeded",
+                "queueTime": "2020-09-07T02:00:40.1049268Z",
+                "startTime": "2020-09-07T02:00:47.4947114Z",
+                "finishTime": "2020-09-07T02:01:03.335128Z",
+                "url": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/Builds/493",
+                "definition": {
+                    "drafts": [],
+                    "id": 16,
+                    "name": "Ease-CI",
+                    "url": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/Definitions/16?revision=2",
+                    "uri": "vstfs:///Build/Definition/16",
+                    "path": "\\",
+                    "type": "build",
+                    "queueStatus": "enabled",
+                    "revision": 2,
+                    "project": {
+                        "id": "636e1096-9319-432d-ac44-cd220ff75d41",
+                        "name": "Ease",
+                        "description": "Code to make work easier. Better description at a later time.",
+                        "url": "https://dubsalot.visualstudio.com/_apis/projects/636e1096-9319-432d-ac44-cd220ff75d41",
+                        "state": "wellFormed",
+                        "revision": 134,
+                        "visibility": "private",
+                        "lastUpdateTime": "2020-02-16T04:15:14.413Z"
+                    }
+                },
+                "project": {
+                    "id": "636e1096-9319-432d-ac44-cd220ff75d41",
+                    "name": "Ease",
+                    "description": "Code to make work easier. Better description at a later time.",
+                    "url": "https://dubsalot.visualstudio.com/_apis/projects/636e1096-9319-432d-ac44-cd220ff75d41",
+                    "state": "wellFormed",
+                    "revision": 134,
+                    "visibility": "private",
+                    "lastUpdateTime": "2020-02-16T04:15:14.413Z"
+                },
+                "uri": "vstfs:///Build/Build/493",
+                "sourceBranch": "refs/heads/master",
+                "sourceVersion": "961e72ce1ff1545f6e8dad6f0e638d17621c3d80",
+                "queue": {
+                    "id": 89,
+                    "name": "Azure Pipelines",
+                    "pool": {
+                        "id": 11,
+                        "name": "Azure Pipelines",
+                        "isHosted": true
+                    }
+                },
+                "priority": "normal",
+                "reason": "manual",
+                "requestedFor": {
+                    "displayName": "wes.goodwin",
+                    "url": "https://spsprodeus27.vssps.visualstudio.com/A2714ae97-d05a-4ba0-8765-84ad70fd4044/_apis/Identities/d04a85e4-ae1e-48e4-b097-efb311db0327",
+                    "_links": {
+                        "avatar": {
+                            "href": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2"
+                        }
+                    },
+                    "id": "d04a85e4-ae1e-48e4-b097-efb311db0327",
+                    "uniqueName": "wes.goodwin@gmail.com",
+                    "imageUrl": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2",
+                    "descriptor": "msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2"
+                },
+                "requestedBy": {
+                    "displayName": "wes.goodwin",
+                    "url": "https://spsprodeus27.vssps.visualstudio.com/A2714ae97-d05a-4ba0-8765-84ad70fd4044/_apis/Identities/d04a85e4-ae1e-48e4-b097-efb311db0327",
+                    "_links": {
+                        "avatar": {
+                            "href": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2"
+                        }
+                    },
+                    "id": "d04a85e4-ae1e-48e4-b097-efb311db0327",
+                    "uniqueName": "wes.goodwin@gmail.com",
+                    "imageUrl": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2",
+                    "descriptor": "msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2"
+                },
+                "lastChangedDate": "2020-09-07T02:01:03.75Z",
+                "lastChangedBy": {
+                    "displayName": "Microsoft.VisualStudio.Services.TFS",
+                    "url": "https://spsprodeus27.vssps.visualstudio.com/A2714ae97-d05a-4ba0-8765-84ad70fd4044/_apis/Identities/00000002-0000-8888-8000-000000000000",
+                    "_links": {
+                        "avatar": {
+                            "href": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA"
+                        }
+                    },
+                    "id": "00000002-0000-8888-8000-000000000000",
+                    "uniqueName": "00000002-0000-8888-8000-000000000000@2c895908-04e0-4952-89fd-54b0046d6288",
+                    "imageUrl": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA",
+                    "descriptor": "s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA"
+                },
+                "parameters": "{\"system.debug\":\"false\"}",
+                "orchestrationPlan": {
+                    "planId": "3ff2ff6e-317d-459d-9483-cfbdb5f5e00e"
+                },
+                "logs": {
+                    "id": 0,
+                    "type": "Container",
+                    "url": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/builds/493/logs"
+                },
+                "repository": {
+                    "id": "2f4124be-ba5c-4617-a13c-c661b72c8800",
+                    "type": "TfsGit",
+                    "name": "powershell-modules",
+                    "url": "https://dubsalot.visualstudio.com/Ease/_git/powershell-modules",
+                    "clean": null,
+                    "checkoutSubmodules": false
+                },
+                "keepForever": true,
+                "retainedByRelease": false,
+                "triggeredByBuild": null
+            },
+            "quality": "definition",
+            "authoredBy": {
+                "displayName": "wes.goodwin",
+                "url": "https://spsprodeus27.vssps.visualstudio.com/A2714ae97-d05a-4ba0-8765-84ad70fd4044/_apis/Identities/d04a85e4-ae1e-48e4-b097-efb311db0327",
+                "_links": {
+                    "avatar": {
+                        "href": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2"
+                    }
+                },
+                "id": "d04a85e4-ae1e-48e4-b097-efb311db0327",
+                "uniqueName": "wes.goodwin@gmail.com",
+                "imageUrl": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2",
+                "descriptor": "msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2"
+            },
+            "drafts": [],
+            "queue": {
+                "_links": {
+                    "self": {
+                        "href": "https://dubsalot.visualstudio.com/_apis/build/Queues/89"
+                    }
+                },
+                "id": 89,
+                "name": "Azure Pipelines",
+                "url": "https://dubsalot.visualstudio.com/_apis/build/Queues/89",
+                "pool": {
+                    "id": 11,
+                    "name": "Azure Pipelines",
+                    "isHosted": true
+                }
+            },
+            "id": 16,
+            "name": "Ease-CI",
+            "url": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/Definitions/16?revision=2",
+            "uri": "vstfs:///Build/Definition/16",
+            "path": "\\",
+            "type": "build",
+            "queueStatus": "enabled",
+            "revision": 2,
+            "createdDate": "2020-03-19T03:12:42.117Z",
+            "project": {
+                "id": "636e1096-9319-432d-ac44-cd220ff75d41",
+                "name": "Ease",
+                "description": "Code to make work easier. Better description at a later time.",
+                "url": "https://dubsalot.visualstudio.com/_apis/projects/636e1096-9319-432d-ac44-cd220ff75d41",
+                "state": "wellFormed",
+                "revision": 134,
+                "visibility": "private",
+                "lastUpdateTime": "2020-02-16T04:15:14.413Z"
+            }
+        },
+        {
+            "_links": {
+                "self": {
+                    "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/Definitions/20?revision=1"
+                },
+                "web": {
+                    "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_build/definition?definitionId=20"
+                },
+                "editor": {
+                    "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_build/designer?id=20&_a=edit-build-definition"
+                },
+                "badge": {
+                    "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/status/20"
+                }
+            },
+            "latestBuild": {
+                "_links": {
+                    "self": {
+                        "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/Builds/494"
+                    },
+                    "web": {
+                        "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_build/results?buildId=494"
+                    },
+                    "sourceVersionDisplayUri": {
+                        "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/builds/494/sources"
+                    },
+                    "timeline": {
+                        "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/builds/494/Timeline"
+                    },
+                    "badge": {
+                        "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/status/20"
+                    }
+                },
+                "properties": {},
+                "tags": [],
+                "validationResults": [],
+                "plans": [
+                    {
+                        "planId": "2a0b60f4-1575-487d-8dce-507d9b72faf4"
+                    }
+                ],
+                "triggerInfo": {},
+                "id": 494,
+                "buildNumber": "20200907.1",
+                "status": "completed",
+                "result": "succeeded",
+                "queueTime": "2020-09-07T02:00:51.7250582Z",
+                "startTime": "2020-09-07T02:01:06.7337984Z",
+                "finishTime": "2020-09-07T02:01:13.2114137Z",
+                "url": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/Builds/494",
+                "definition": {
+                    "drafts": [],
+                    "id": 20,
+                    "name": "powershell-modules",
+                    "url": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/Definitions/20?revision=1",
+                    "uri": "vstfs:///Build/Definition/20",
+                    "path": "\\",
+                    "type": "build",
+                    "queueStatus": "enabled",
+                    "revision": 1,
+                    "project": {
+                        "id": "636e1096-9319-432d-ac44-cd220ff75d41",
+                        "name": "Ease",
+                        "description": "Code to make work easier. Better description at a later time.",
+                        "url": "https://dubsalot.visualstudio.com/_apis/projects/636e1096-9319-432d-ac44-cd220ff75d41",
+                        "state": "wellFormed",
+                        "revision": 134,
+                        "visibility": "private",
+                        "lastUpdateTime": "2020-02-16T04:15:14.413Z"
+                    }
+                },
+                "buildNumberRevision": 1,
+                "project": {
+                    "id": "636e1096-9319-432d-ac44-cd220ff75d41",
+                    "name": "Ease",
+                    "description": "Code to make work easier. Better description at a later time.",
+                    "url": "https://dubsalot.visualstudio.com/_apis/projects/636e1096-9319-432d-ac44-cd220ff75d41",
+                    "state": "wellFormed",
+                    "revision": 134,
+                    "visibility": "private",
+                    "lastUpdateTime": "2020-02-16T04:15:14.413Z"
+                },
+                "uri": "vstfs:///Build/Build/494",
+                "sourceBranch": "refs/heads/master",
+                "sourceVersion": "961e72ce1ff1545f6e8dad6f0e638d17621c3d80",
+                "queue": {
+                    "id": 85,
+                    "name": "Hosted Ubuntu 1604",
+                    "pool": {
+                        "id": 7,
+                        "name": "Hosted Ubuntu 1604",
+                        "isHosted": true
+                    }
+                },
+                "priority": "normal",
+                "reason": "manual",
+                "requestedFor": {
+                    "displayName": "wes.goodwin",
+                    "url": "https://spsprodeus27.vssps.visualstudio.com/A2714ae97-d05a-4ba0-8765-84ad70fd4044/_apis/Identities/d04a85e4-ae1e-48e4-b097-efb311db0327",
+                    "_links": {
+                        "avatar": {
+                            "href": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2"
+                        }
+                    },
+                    "id": "d04a85e4-ae1e-48e4-b097-efb311db0327",
+                    "uniqueName": "wes.goodwin@gmail.com",
+                    "imageUrl": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2",
+                    "descriptor": "msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2"
+                },
+                "requestedBy": {
+                    "displayName": "wes.goodwin",
+                    "url": "https://spsprodeus27.vssps.visualstudio.com/A2714ae97-d05a-4ba0-8765-84ad70fd4044/_apis/Identities/d04a85e4-ae1e-48e4-b097-efb311db0327",
+                    "_links": {
+                        "avatar": {
+                            "href": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2"
+                        }
+                    },
+                    "id": "d04a85e4-ae1e-48e4-b097-efb311db0327",
+                    "uniqueName": "wes.goodwin@gmail.com",
+                    "imageUrl": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2",
+                    "descriptor": "msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2"
+                },
+                "lastChangedDate": "2020-09-07T02:01:13.513Z",
+                "lastChangedBy": {
+                    "displayName": "Microsoft.VisualStudio.Services.TFS",
+                    "url": "https://spsprodeus27.vssps.visualstudio.com/A2714ae97-d05a-4ba0-8765-84ad70fd4044/_apis/Identities/00000002-0000-8888-8000-000000000000",
+                    "_links": {
+                        "avatar": {
+                            "href": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA"
+                        }
+                    },
+                    "id": "00000002-0000-8888-8000-000000000000",
+                    "uniqueName": "00000002-0000-8888-8000-000000000000@2c895908-04e0-4952-89fd-54b0046d6288",
+                    "imageUrl": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA",
+                    "descriptor": "s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA"
+                },
+                "orchestrationPlan": {
+                    "planId": "2a0b60f4-1575-487d-8dce-507d9b72faf4"
+                },
+                "logs": {
+                    "id": 0,
+                    "type": "Container",
+                    "url": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/builds/494/logs"
+                },
+                "repository": {
+                    "id": "2f4124be-ba5c-4617-a13c-c661b72c8800",
+                    "type": "TfsGit",
+                    "name": "powershell-modules",
+                    "url": "https://dubsalot.visualstudio.com/Ease/_git/powershell-modules",
+                    "clean": null,
+                    "checkoutSubmodules": false
+                },
+                "keepForever": true,
+                "retainedByRelease": false,
+                "triggeredByBuild": null
+            },
+            "latestCompletedBuild": {
+                "_links": {
+                    "self": {
+                        "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/Builds/494"
+                    },
+                    "web": {
+                        "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_build/results?buildId=494"
+                    },
+                    "sourceVersionDisplayUri": {
+                        "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/builds/494/sources"
+                    },
+                    "timeline": {
+                        "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/builds/494/Timeline"
+                    },
+                    "badge": {
+                        "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/status/20"
+                    }
+                },
+                "properties": {},
+                "tags": [],
+                "validationResults": [],
+                "plans": [
+                    {
+                        "planId": "2a0b60f4-1575-487d-8dce-507d9b72faf4"
+                    }
+                ],
+                "triggerInfo": {},
+                "id": 494,
+                "buildNumber": "20200907.1",
+                "status": "completed",
+                "result": "succeeded",
+                "queueTime": "2020-09-07T02:00:51.7250582Z",
+                "startTime": "2020-09-07T02:01:06.7337984Z",
+                "finishTime": "2020-09-07T02:01:13.2114137Z",
+                "url": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/Builds/494",
+                "definition": {
+                    "drafts": [],
+                    "id": 20,
+                    "name": "powershell-modules",
+                    "url": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/Definitions/20?revision=1",
+                    "uri": "vstfs:///Build/Definition/20",
+                    "path": "\\",
+                    "type": "build",
+                    "queueStatus": "enabled",
+                    "revision": 1,
+                    "project": {
+                        "id": "636e1096-9319-432d-ac44-cd220ff75d41",
+                        "name": "Ease",
+                        "description": "Code to make work easier. Better description at a later time.",
+                        "url": "https://dubsalot.visualstudio.com/_apis/projects/636e1096-9319-432d-ac44-cd220ff75d41",
+                        "state": "wellFormed",
+                        "revision": 134,
+                        "visibility": "private",
+                        "lastUpdateTime": "2020-02-16T04:15:14.413Z"
+                    }
+                },
+                "buildNumberRevision": 1,
+                "project": {
+                    "id": "636e1096-9319-432d-ac44-cd220ff75d41",
+                    "name": "Ease",
+                    "description": "Code to make work easier. Better description at a later time.",
+                    "url": "https://dubsalot.visualstudio.com/_apis/projects/636e1096-9319-432d-ac44-cd220ff75d41",
+                    "state": "wellFormed",
+                    "revision": 134,
+                    "visibility": "private",
+                    "lastUpdateTime": "2020-02-16T04:15:14.413Z"
+                },
+                "uri": "vstfs:///Build/Build/494",
+                "sourceBranch": "refs/heads/master",
+                "sourceVersion": "961e72ce1ff1545f6e8dad6f0e638d17621c3d80",
+                "queue": {
+                    "id": 85,
+                    "name": "Hosted Ubuntu 1604",
+                    "pool": {
+                        "id": 7,
+                        "name": "Hosted Ubuntu 1604",
+                        "isHosted": true
+                    }
+                },
+                "priority": "normal",
+                "reason": "manual",
+                "requestedFor": {
+                    "displayName": "wes.goodwin",
+                    "url": "https://spsprodeus27.vssps.visualstudio.com/A2714ae97-d05a-4ba0-8765-84ad70fd4044/_apis/Identities/d04a85e4-ae1e-48e4-b097-efb311db0327",
+                    "_links": {
+                        "avatar": {
+                            "href": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2"
+                        }
+                    },
+                    "id": "d04a85e4-ae1e-48e4-b097-efb311db0327",
+                    "uniqueName": "wes.goodwin@gmail.com",
+                    "imageUrl": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2",
+                    "descriptor": "msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2"
+                },
+                "requestedBy": {
+                    "displayName": "wes.goodwin",
+                    "url": "https://spsprodeus27.vssps.visualstudio.com/A2714ae97-d05a-4ba0-8765-84ad70fd4044/_apis/Identities/d04a85e4-ae1e-48e4-b097-efb311db0327",
+                    "_links": {
+                        "avatar": {
+                            "href": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2"
+                        }
+                    },
+                    "id": "d04a85e4-ae1e-48e4-b097-efb311db0327",
+                    "uniqueName": "wes.goodwin@gmail.com",
+                    "imageUrl": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2",
+                    "descriptor": "msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2"
+                },
+                "lastChangedDate": "2020-09-07T02:01:13.513Z",
+                "lastChangedBy": {
+                    "displayName": "Microsoft.VisualStudio.Services.TFS",
+                    "url": "https://spsprodeus27.vssps.visualstudio.com/A2714ae97-d05a-4ba0-8765-84ad70fd4044/_apis/Identities/00000002-0000-8888-8000-000000000000",
+                    "_links": {
+                        "avatar": {
+                            "href": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA"
+                        }
+                    },
+                    "id": "00000002-0000-8888-8000-000000000000",
+                    "uniqueName": "00000002-0000-8888-8000-000000000000@2c895908-04e0-4952-89fd-54b0046d6288",
+                    "imageUrl": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA",
+                    "descriptor": "s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA"
+                },
+                "orchestrationPlan": {
+                    "planId": "2a0b60f4-1575-487d-8dce-507d9b72faf4"
+                },
+                "logs": {
+                    "id": 0,
+                    "type": "Container",
+                    "url": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/builds/494/logs"
+                },
+                "repository": {
+                    "id": "2f4124be-ba5c-4617-a13c-c661b72c8800",
+                    "type": "TfsGit",
+                    "name": "powershell-modules",
+                    "url": "https://dubsalot.visualstudio.com/Ease/_git/powershell-modules",
+                    "clean": null,
+                    "checkoutSubmodules": false
+                },
+                "keepForever": true,
+                "retainedByRelease": false,
+                "triggeredByBuild": null
+            },
+            "quality": "definition",
+            "authoredBy": {
+                "displayName": "wes.goodwin",
+                "url": "https://spsprodeus27.vssps.visualstudio.com/A2714ae97-d05a-4ba0-8765-84ad70fd4044/_apis/Identities/d04a85e4-ae1e-48e4-b097-efb311db0327",
+                "_links": {
+                    "avatar": {
+                        "href": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2"
+                    }
+                },
+                "id": "d04a85e4-ae1e-48e4-b097-efb311db0327",
+                "uniqueName": "wes.goodwin@gmail.com",
+                "imageUrl": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2",
+                "descriptor": "msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2"
+            },
+            "drafts": [],
+            "queue": {
+                "_links": {
+                    "self": {
+                        "href": "https://dubsalot.visualstudio.com/_apis/build/Queues/85"
+                    }
+                },
+                "id": 85,
+                "name": "Hosted Ubuntu 1604",
+                "url": "https://dubsalot.visualstudio.com/_apis/build/Queues/85",
+                "pool": {
+                    "id": 7,
+                    "name": "Hosted Ubuntu 1604",
+                    "isHosted": true
+                }
+            },
+            "id": 20,
+            "name": "powershell-modules",
+            "url": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/Definitions/20?revision=1",
+            "uri": "vstfs:///Build/Definition/20",
+            "path": "\\",
+            "type": "build",
+            "queueStatus": "enabled",
+            "revision": 1,
+            "createdDate": "2020-08-29T03:57:52.457Z",
+            "project": {
+                "id": "636e1096-9319-432d-ac44-cd220ff75d41",
+                "name": "Ease",
+                "description": "Code to make work easier. Better description at a later time.",
+                "url": "https://dubsalot.visualstudio.com/_apis/projects/636e1096-9319-432d-ac44-cd220ff75d41",
+                "state": "wellFormed",
+                "revision": 134,
+                "visibility": "private",
+                "lastUpdateTime": "2020-02-16T04:15:14.413Z"
+            }
+        },
+        {
+            "_links": {
+                "self": {
+                    "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/Definitions/21?revision=5"
+                },
+                "web": {
+                    "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_build/definition?definitionId=21"
+                },
+                "editor": {
+                    "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_build/designer?id=21&_a=edit-build-definition"
+                },
+                "badge": {
+                    "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/status/21"
+                }
+            },
+            "latestBuild": {
+                "_links": {
+                    "self": {
+                        "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/Builds/523"
+                    },
+                    "web": {
+                        "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_build/results?buildId=523"
+                    },
+                    "sourceVersionDisplayUri": {
+                        "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/builds/523/sources"
+                    },
+                    "timeline": {
+                        "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/builds/523/Timeline"
+                    },
+                    "badge": {
+                        "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/status/21"
+                    }
+                },
+                "properties": {},
+                "tags": [],
+                "validationResults": [],
+                "plans": [
+                    {
+                        "planId": "b8eefa2b-25d6-40e1-8715-72903615fc80"
+                    }
+                ],
+                "triggerInfo": {
+                    "ci.sourceSha": "30a13638e9486a0b923fc14783dbdd26c423359e",
+                    "ci.message": "Merged PR 37: blah",
+                    "ci.triggerRepository": "2b15dc30-29ae-4fe7-bc80-01e59049caf3"
+                },
+                "id": 523,
+                "buildNumber": "2020.9.12.523",
+                "status": "completed",
+                "result": "succeeded",
+                "queueTime": "2020-09-12T21:25:42.9727351Z",
+                "startTime": "2020-09-12T21:25:48.4277622Z",
+                "finishTime": "2020-09-12T21:26:47.2938165Z",
+                "url": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/Builds/523",
+                "definition": {
+                    "drafts": [],
+                    "id": 21,
+                    "name": "azdo-extensions",
+                    "url": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/Definitions/21?revision=5",
+                    "uri": "vstfs:///Build/Definition/21",
+                    "path": "\\Azure DevOps Extensions",
+                    "type": "build",
+                    "queueStatus": "enabled",
+                    "revision": 5,
+                    "project": {
+                        "id": "636e1096-9319-432d-ac44-cd220ff75d41",
+                        "name": "Ease",
+                        "description": "Code to make work easier. Better description at a later time.",
+                        "url": "https://dubsalot.visualstudio.com/_apis/projects/636e1096-9319-432d-ac44-cd220ff75d41",
+                        "state": "wellFormed",
+                        "revision": 134,
+                        "visibility": "private",
+                        "lastUpdateTime": "2020-02-16T04:15:14.413Z"
+                    }
+                },
+                "project": {
+                    "id": "636e1096-9319-432d-ac44-cd220ff75d41",
+                    "name": "Ease",
+                    "description": "Code to make work easier. Better description at a later time.",
+                    "url": "https://dubsalot.visualstudio.com/_apis/projects/636e1096-9319-432d-ac44-cd220ff75d41",
+                    "state": "wellFormed",
+                    "revision": 134,
+                    "visibility": "private",
+                    "lastUpdateTime": "2020-02-16T04:15:14.413Z"
+                },
+                "uri": "vstfs:///Build/Build/523",
+                "sourceBranch": "refs/heads/master",
+                "sourceVersion": "30a13638e9486a0b923fc14783dbdd26c423359e",
+                "queue": {
+                    "id": 85,
+                    "name": "Hosted Ubuntu 1604",
+                    "pool": {
+                        "id": 7,
+                        "name": "Hosted Ubuntu 1604",
+                        "isHosted": true
+                    }
+                },
+                "priority": "normal",
+                "reason": "individualCI",
+                "requestedFor": {
+                    "displayName": "wes.goodwin",
+                    "url": "https://spsprodeus27.vssps.visualstudio.com/A2714ae97-d05a-4ba0-8765-84ad70fd4044/_apis/Identities/d04a85e4-ae1e-48e4-b097-efb311db0327",
+                    "_links": {
+                        "avatar": {
+                            "href": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2"
+                        }
+                    },
+                    "id": "d04a85e4-ae1e-48e4-b097-efb311db0327",
+                    "uniqueName": "wes.goodwin@gmail.com",
+                    "imageUrl": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2",
+                    "descriptor": "msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2"
+                },
+                "requestedBy": {
+                    "displayName": "Microsoft.VisualStudio.Services.TFS",
+                    "url": "https://spsprodeus27.vssps.visualstudio.com/A2714ae97-d05a-4ba0-8765-84ad70fd4044/_apis/Identities/00000002-0000-8888-8000-000000000000",
+                    "_links": {
+                        "avatar": {
+                            "href": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA"
+                        }
+                    },
+                    "id": "00000002-0000-8888-8000-000000000000",
+                    "uniqueName": "00000002-0000-8888-8000-000000000000@2c895908-04e0-4952-89fd-54b0046d6288",
+                    "imageUrl": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA",
+                    "descriptor": "s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA"
+                },
+                "lastChangedDate": "2020-09-12T21:26:48.067Z",
+                "lastChangedBy": {
+                    "displayName": "Microsoft.VisualStudio.Services.TFS",
+                    "url": "https://spsprodeus27.vssps.visualstudio.com/A2714ae97-d05a-4ba0-8765-84ad70fd4044/_apis/Identities/00000002-0000-8888-8000-000000000000",
+                    "_links": {
+                        "avatar": {
+                            "href": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA"
+                        }
+                    },
+                    "id": "00000002-0000-8888-8000-000000000000",
+                    "uniqueName": "00000002-0000-8888-8000-000000000000@2c895908-04e0-4952-89fd-54b0046d6288",
+                    "imageUrl": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA",
+                    "descriptor": "s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA"
+                },
+                "orchestrationPlan": {
+                    "planId": "b8eefa2b-25d6-40e1-8715-72903615fc80"
+                },
+                "logs": {
+                    "id": 0,
+                    "type": "Container",
+                    "url": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/builds/523/logs"
+                },
+                "repository": {
+                    "id": "2b15dc30-29ae-4fe7-bc80-01e59049caf3",
+                    "type": "TfsGit",
+                    "name": "azdo-extensions",
+                    "url": "https://dubsalot.visualstudio.com/Ease/_git/azdo-extensions",
+                    "clean": null,
+                    "checkoutSubmodules": false
+                },
+                "keepForever": true,
+                "retainedByRelease": false,
+                "triggeredByBuild": null
+            },
+            "latestCompletedBuild": {
+                "_links": {
+                    "self": {
+                        "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/Builds/523"
+                    },
+                    "web": {
+                        "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_build/results?buildId=523"
+                    },
+                    "sourceVersionDisplayUri": {
+                        "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/builds/523/sources"
+                    },
+                    "timeline": {
+                        "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/builds/523/Timeline"
+                    },
+                    "badge": {
+                        "href": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/status/21"
+                    }
+                },
+                "properties": {},
+                "tags": [],
+                "validationResults": [],
+                "plans": [
+                    {
+                        "planId": "b8eefa2b-25d6-40e1-8715-72903615fc80"
+                    }
+                ],
+                "triggerInfo": {
+                    "ci.sourceSha": "30a13638e9486a0b923fc14783dbdd26c423359e",
+                    "ci.message": "Merged PR 37: blah",
+                    "ci.triggerRepository": "2b15dc30-29ae-4fe7-bc80-01e59049caf3"
+                },
+                "id": 523,
+                "buildNumber": "2020.9.12.523",
+                "status": "completed",
+                "result": "succeeded",
+                "queueTime": "2020-09-12T21:25:42.9727351Z",
+                "startTime": "2020-09-12T21:25:48.4277622Z",
+                "finishTime": "2020-09-12T21:26:47.2938165Z",
+                "url": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/Builds/523",
+                "definition": {
+                    "drafts": [],
+                    "id": 21,
+                    "name": "azdo-extensions",
+                    "url": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/Definitions/21?revision=5",
+                    "uri": "vstfs:///Build/Definition/21",
+                    "path": "\\Azure DevOps Extensions",
+                    "type": "build",
+                    "queueStatus": "enabled",
+                    "revision": 5,
+                    "project": {
+                        "id": "636e1096-9319-432d-ac44-cd220ff75d41",
+                        "name": "Ease",
+                        "description": "Code to make work easier. Better description at a later time.",
+                        "url": "https://dubsalot.visualstudio.com/_apis/projects/636e1096-9319-432d-ac44-cd220ff75d41",
+                        "state": "wellFormed",
+                        "revision": 134,
+                        "visibility": "private",
+                        "lastUpdateTime": "2020-02-16T04:15:14.413Z"
+                    }
+                },
+                "project": {
+                    "id": "636e1096-9319-432d-ac44-cd220ff75d41",
+                    "name": "Ease",
+                    "description": "Code to make work easier. Better description at a later time.",
+                    "url": "https://dubsalot.visualstudio.com/_apis/projects/636e1096-9319-432d-ac44-cd220ff75d41",
+                    "state": "wellFormed",
+                    "revision": 134,
+                    "visibility": "private",
+                    "lastUpdateTime": "2020-02-16T04:15:14.413Z"
+                },
+                "uri": "vstfs:///Build/Build/523",
+                "sourceBranch": "refs/heads/master",
+                "sourceVersion": "30a13638e9486a0b923fc14783dbdd26c423359e",
+                "queue": {
+                    "id": 85,
+                    "name": "Hosted Ubuntu 1604",
+                    "pool": {
+                        "id": 7,
+                        "name": "Hosted Ubuntu 1604",
+                        "isHosted": true
+                    }
+                },
+                "priority": "normal",
+                "reason": "individualCI",
+                "requestedFor": {
+                    "displayName": "wes.goodwin",
+                    "url": "https://spsprodeus27.vssps.visualstudio.com/A2714ae97-d05a-4ba0-8765-84ad70fd4044/_apis/Identities/d04a85e4-ae1e-48e4-b097-efb311db0327",
+                    "_links": {
+                        "avatar": {
+                            "href": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2"
+                        }
+                    },
+                    "id": "d04a85e4-ae1e-48e4-b097-efb311db0327",
+                    "uniqueName": "wes.goodwin@gmail.com",
+                    "imageUrl": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2",
+                    "descriptor": "msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2"
+                },
+                "requestedBy": {
+                    "displayName": "Microsoft.VisualStudio.Services.TFS",
+                    "url": "https://spsprodeus27.vssps.visualstudio.com/A2714ae97-d05a-4ba0-8765-84ad70fd4044/_apis/Identities/00000002-0000-8888-8000-000000000000",
+                    "_links": {
+                        "avatar": {
+                            "href": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA"
+                        }
+                    },
+                    "id": "00000002-0000-8888-8000-000000000000",
+                    "uniqueName": "00000002-0000-8888-8000-000000000000@2c895908-04e0-4952-89fd-54b0046d6288",
+                    "imageUrl": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA",
+                    "descriptor": "s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA"
+                },
+                "lastChangedDate": "2020-09-12T21:26:48.067Z",
+                "lastChangedBy": {
+                    "displayName": "Microsoft.VisualStudio.Services.TFS",
+                    "url": "https://spsprodeus27.vssps.visualstudio.com/A2714ae97-d05a-4ba0-8765-84ad70fd4044/_apis/Identities/00000002-0000-8888-8000-000000000000",
+                    "_links": {
+                        "avatar": {
+                            "href": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA"
+                        }
+                    },
+                    "id": "00000002-0000-8888-8000-000000000000",
+                    "uniqueName": "00000002-0000-8888-8000-000000000000@2c895908-04e0-4952-89fd-54b0046d6288",
+                    "imageUrl": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA",
+                    "descriptor": "s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA"
+                },
+                "orchestrationPlan": {
+                    "planId": "b8eefa2b-25d6-40e1-8715-72903615fc80"
+                },
+                "logs": {
+                    "id": 0,
+                    "type": "Container",
+                    "url": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/builds/523/logs"
+                },
+                "repository": {
+                    "id": "2b15dc30-29ae-4fe7-bc80-01e59049caf3",
+                    "type": "TfsGit",
+                    "name": "azdo-extensions",
+                    "url": "https://dubsalot.visualstudio.com/Ease/_git/azdo-extensions",
+                    "clean": null,
+                    "checkoutSubmodules": false
+                },
+                "keepForever": true,
+                "retainedByRelease": false,
+                "triggeredByBuild": null
+            },
+            "quality": "definition",
+            "authoredBy": {
+                "displayName": "wes.goodwin",
+                "url": "https://spsprodeus27.vssps.visualstudio.com/A2714ae97-d05a-4ba0-8765-84ad70fd4044/_apis/Identities/d04a85e4-ae1e-48e4-b097-efb311db0327",
+                "_links": {
+                    "avatar": {
+                        "href": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2"
+                    }
+                },
+                "id": "d04a85e4-ae1e-48e4-b097-efb311db0327",
+                "uniqueName": "wes.goodwin@gmail.com",
+                "imageUrl": "https://dubsalot.visualstudio.com/_apis/GraphProfile/MemberAvatars/msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2",
+                "descriptor": "msa.NDQ4MWRhZTAtY2EzZi03NDQwLTk5MjQtYWYxNjFmM2E4YmE2"
+            },
+            "drafts": [],
+            "queue": {
+                "_links": {
+                    "self": {
+                        "href": "https://dubsalot.visualstudio.com/_apis/build/Queues/85"
+                    }
+                },
+                "id": 85,
+                "name": "Hosted Ubuntu 1604",
+                "url": "https://dubsalot.visualstudio.com/_apis/build/Queues/85",
+                "pool": {
+                    "id": 7,
+                    "name": "Hosted Ubuntu 1604",
+                    "isHosted": true
+                }
+            },
+            "id": 21,
+            "name": "azdo-extensions",
+            "url": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/build/Definitions/21?revision=5",
+            "uri": "vstfs:///Build/Definition/21",
+            "path": "\\Azure DevOps Extensions",
+            "type": "build",
+            "queueStatus": "enabled",
+            "revision": 5,
+            "createdDate": "2020-08-31T03:04:54.757Z",
+            "project": {
+                "id": "636e1096-9319-432d-ac44-cd220ff75d41",
+                "name": "Ease",
+                "description": "Code to make work easier. Better description at a later time.",
+                "url": "https://dubsalot.visualstudio.com/_apis/projects/636e1096-9319-432d-ac44-cd220ff75d41",
+                "state": "wellFormed",
+                "revision": 134,
+                "visibility": "private",
+                "lastUpdateTime": "2020-02-16T04:15:14.413Z"
+            }
+        }
+    ]
+}

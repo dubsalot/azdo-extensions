@@ -1,0 +1,152 @@
+name: $(Year:yyyy).$(Month).$(DayOfMonth).$(BuildID)
+
+variables:
+  PUBLISH_TOKEN: $(publishtoken)
+  EXTENSION_VERSION: $[format('{0:yyyy}.{0:M}.{0:d}.{1}', pipeline.startTime, variables['Build.BuildId'])]
+  EXTENSION_ID: pipelinesoverviewhub
+  EXTENSION_NAME: dubsalot pipelines
+  EXTENSION_ICON: logo.png
+  EXTENSION_PIPELINE_ICON: pipeline-logo.png
+  EXTENSION_HUBGROUP_ICON: logo-hub.png
+  EXTENSION_PIPELINE_NAME: Pipeline Overview
+  setPipelineVariables: ${{ ne(variables['Build.SourceBranch'], 'refs/heads/master') }}
+  BRANCH_NAME: $(Build.SourceBranchName)
+  NON_PROD_NAME: beta
+trigger:
+- master
+- develop
+- feature/*
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+
+# set environment indicator to beta if this is the develop branch
+- script: |
+    echo Set environment indicator to BETA
+    echo '##vso[task.setvariable variable=NON_PROD_NAME]beta'
+  displayName: Set environment indicator
+  condition: eq(variables['Build.SourceBranch'], 'refs/heads/develop')
+
+# set environment indicator to alpha if this is a feature branch
+- script: |
+    echo Set environment indicator to ALPHA
+    echo '##vso[task.setvariable variable=NON_PROD_NAME]alpha'
+  displayName: Set environment indicator
+  condition: startsWith(variables['Build.SourceBranch'], 'refs/heads/feature')
+
+# dump out files for debugging
+- script: | 
+    echo "-----------------------------------------------------------------------------------------------------------------------------------------------------------------"
+    cat $(Pipeline.Workspace)/s/pipelines/azure-devops-extension-ci.json
+    echo "-----------------------------------------------------------------------------------------------------------------------------------------------------------------"
+    cat $(Pipeline.Workspace)/s/pipelines/src/Hubs/Pipeview/pipeview-ci.json
+    echo "-----------------------------------------------------------------------------------------------------------------------------------------------------------------"
+  displayName: 'dump file to debug'
+  condition: and(succeeded(), eq(variables['System.Debug'], true))
+ 
+#set pipeline variables to enbvironment specific values
+- template: templates/set-variables-to-env.yml
+  parameters:
+    shouldRun: ${{ variables.setPipelineVariables }}
+    tokens:
+      - name: EXTENSION_ID
+        value: $(EXTENSION_ID)-$(NON_PROD_NAME)
+      - name: EXTENSION_NAME
+        value: $(EXTENSION_NAME)-$(NON_PROD_NAME)
+      - name: EXTENSION_ICON
+        value: logo-$(NON_PROD_NAME).png
+      - name: EXTENSION_PIPELINE_ICON
+        value: pipeline-logo-$(NON_PROD_NAME).png
+      - name: EXTENSION_PIPELINE_NAME
+        value: $(EXTENSION_PIPELINE_NAME) ($(NON_PROD_NAME))
+      - name: EXTENSION_HUBGROUP_ICON
+        value: logo-hub-$(NON_PROD_NAME).png
+     
+# set value in extension manifest
+- template: templates/replace-tokens-in-file.yml
+  parameters:
+    files:
+      - $(Pipeline.Workspace)/s/pipelines/azure-devops-extension-ci.json
+      - $(Pipeline.Workspace)/s/pipelines/src/Hubs/Pipeview/pipeview-ci.json
+    tokens:
+      - name: EXTENSION_ID
+        value: $(EXTENSION_ID)
+      - name: EXTENSION_NAME
+        value: $(EXTENSION_NAME)
+      - name: EXTENSION_VERSION
+        value: $(EXTENSION_VERSION)
+      - name: EXTENSION_ICON
+        value: $(EXTENSION_ICON)
+      - name: EXTENSION_PIPELINE_ICON
+        value: $(EXTENSION_PIPELINE_ICON)
+      - name: EXTENSION_PIPELINE_NAME
+        value: $(EXTENSION_PIPELINE_NAME)
+      - name: BRANCH_NAME
+        value: $(BRANCH_NAME)
+      - name: EXTENSION_HUBGROUP_ICON
+        value: $(EXTENSION_HUBGROUP_ICON)
+
+# dump out files for debugging
+- script: | 
+    echo "-----------------------------------------------------------------------------------------------------------------------------------------------------------------"
+    cat $(Pipeline.Workspace)/s/pipelines/azure-devops-extension-ci.json
+    echo "-----------------------------------------------------------------------------------------------------------------------------------------------------------------"
+    cat $(Pipeline.Workspace)/s/pipelines/src/Hubs/Pipeview/pipeview-ci.json
+    echo "-----------------------------------------------------------------------------------------------------------------------------------------------------------------"
+  displayName: 'dump file to debug'
+  condition: and(succeeded(), eq(variables['System.Debug'], true)) 
+
+# install npm packages and tfx-cli  
+- script: | 
+    echo "=============================================================================================================================================================================================="
+    cd pipelines
+    npm install
+    sudo npm install -g tfx-cli
+    echo "=============================================================================================================================================================================================="
+  displayName: 'restoring npm packages an installing tfx-cli'
+  condition: succeeded()  
+
+# cleanup dist foler and vsix files in case they are there for whatever reasson
+- script: |
+    echo "==============================================================================================================================================================================================" 
+    cd pipelines
+    rm -rf dist
+    rm -f *.vsix
+    echo "=============================================================================================================================================================================================="
+  displayName: 'clean working directory'
+  
+# webpack to compile the code into the dist folder  
+- script: |
+    echo "=============================================================================================================================================================================================="
+    cd pipelines
+    webpack --mode production --env.useFakes=false
+    echo "=============================================================================================================================================================================================="
+  displayName: 'compile with webpack'
+  condition: succeeded()
+  
+# publish the extension to the marketplace. this will eventually create a vsix and publish the vsix as a pipeline artifact
+- script: |
+    echo "=============================================================================================================================================================================================="
+    cd pipelines
+
+    tfx extension create --manifest-globs azure-devops-extension-ci.json src/Hubs/**/*-ci.json
+    status=$?
+    
+    if (( status != 0 )); then
+      echo "##vso[task.logissue type=error]tfx extension create did not succeed. check output above."
+      exit 1
+    fi
+
+    tfx extension publish --service-url https://marketplace.visualstudio.com/ --auth-type pat --token $(PUBLISH_TOKEN) --share-with dubsalot --manifest-globs azure-devops-extension-ci.json ./src/Hubs/**/*-ci.json
+    status=$?
+    
+    if (( status != 0 )); then
+      echo "##vso[task.logissue type=error]tfx extension publish did not succeed. check output above."
+      exit 2
+    fi
+
+    echo "=============================================================================================================================================================================================="
+  displayName: 'publish the extension if this is the develop branch'
+  condition: succeeded()

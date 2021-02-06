@@ -1,0 +1,15 @@
+parameters:
+- name: files
+  type: object
+  default: {}
+- name: tokens
+  type: object
+  default: {}
+
+steps:
+- ${{ each f in parameters.files }}:
+  - ${{ each token in parameters.tokens }}:
+    - script: | 
+        echo "${{ token.name }} should become ${{ token.value }} in ${{ f }}"
+        sed -i 's/<_${{ token.name }}_>/${{ token.value }}/g' ${{ f }}
+      displayName: Replacing ${{ token.name }}

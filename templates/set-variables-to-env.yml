@@ -1,0 +1,16 @@
+parameters:
+- name: tokens
+  type: object
+  default: {}
+- name: shouldRun
+  type: boolean
+  default: false
+
+steps:
+- ${{ each token in parameters.tokens }}:
+    - script: |
+        echo 'Setting pipeline.variables.${{ token.name }} ${{ token.value }}'
+        echo '##vso[task.setvariable variable=${{ token.name }}]${{ token.value }}'
+      displayName: Setting Varibles because setVariables == true
+      condition: eq( ${{ parameters.shouldRun }}, true)
+

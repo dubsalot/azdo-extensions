@@ -1,0 +1,223 @@
+@import "node_modules/azure-devops-ui/Core/_platformCommon.scss";
+
+.hubcontainer {
+    color: var(--text-primary-color, #000);
+}
+
+.clickable { 
+    cursor: pointer;
+}
+
+.dubs-hub {
+    font-size: $fontSizeM;
+}
+
+.bolt-tab:hover {
+    color: var(--text-primary-color, #000) !important;
+}
+.azdoPanel {
+    padding: 5px 10px 5px 10px;
+    color: var(--palette-black-alpha-70, #666);
+    border-bottom: solid 1px var(--palette-black-alpha-10, #dbdbdb);
+}
+
+.azdoPanel:last-child, .azdoPanel.no-border {
+    border-bottom: none;
+}
+.azdoPanel .bolt-button {
+    padding: 3px 8px;
+    font-weight: normal;
+}
+
+.azdoPanel .nameheader {
+    font-size: 1.08em;
+    margin-left: 20px;
+    overflow-wrap: anywhere;
+    font-weight: bold;
+}
+
+.fakeHeader {
+    height: 45px;
+    padding: 2px 10px 2px 5px;
+    display: flex;
+    justify-content: flex-end;
+}
+.fakeHeader .fhItem {
+    margin-right: 7px;
+    display: flex;
+}
+
+.azdoList .azdoPanel.loading,
+.azdoList .azdoPanel.loading button,
+.azdoList .azdoPanel.loading .bolt-link {
+    color: transparent !important;
+    text-shadow: 0 0 10px var(--palette-black-alpha-0, #000);
+}
+
+.azdoPanel.loading {
+    animation: cardloading;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+.fakeHeader .fhId .vss-Persona-content {
+    background: none;
+    background-color: $neutral-alpha-70 !important;
+}
+
+@keyframes cardloading {
+    0% {
+        text-shadow: 0px 0px 10px var(--palette-black-alpha-0, #000);
+    }
+    50% {
+        text-shadow: 0px 0px 15px var(--palette-black-alpha-20, #666);
+    }
+    100% {
+        text-shadow: 0px 0px 10px var(--palette-black-alpha-0, #000);
+    }
+}
+
+.pncontainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.azdoList {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 5px;
+    flex: 1;
+}
+
+.settings {
+    margin: 20px;
+}
+
+.settings .settingsContent {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.versioninfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+    color: var(--palette-black-alpha-10, #dbdbdb);
+}
+
+.flex-grid {
+    display: flex;
+}
+
+.pncontainer .bolt-header-no-spacing-defined {
+    padding-top: 0;
+}
+.pncontainer .bolt-header {
+    padding-left: 0;
+}
+.pncontainer .bolt-header-icon {
+    font-size: 1rem;
+    margin-right: 8px;
+    margin-top: 5px;
+}
+.pncontainer .bolt-header-title {
+    padding-top: 2px;
+    padding-bottom: 0;
+}
+
+.pnLinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+.pnLinks div {
+    margin: 0 8px 0 8px;
+    font-size: 0.8em;
+    text-transform: lowercase;
+}
+
+.azdoList .stageStatus {
+    margin: 1px 3px 1px 3px;
+    font-size: 0.9em;
+}
+
+.azdoList .stageStatus .bolt-status-text {
+    font-size: 0.8em;
+}
+
+.azdoList .stageStatus .bolt-status-text.xl {
+    padding: 1px 7px 3px 2px;
+}
+.azdoList .stageStatus .bolt-status-extended {
+    height: 17px;
+    border-radius: 5px;
+}
+
+.pipelinestatus {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: center;
+    min-width: 15px;
+    height: 15px;
+    background-color: var(--component-status-success, rgba(85, 163, 98, 1));
+    margin-left: 4px;
+    border-radius: 5px;
+    font-size: 0.7em;
+    padding: 0;
+    border: solid 1px #000;
+    border-color: var(--palette-black-alpha-70, #666);
+}
+
+.pipelinestatus span {
+    margin: 0;
+    margin-top: -2px;
+}
+
+.pipelinestatus.withtext {
+    padding-left: 12px;
+    padding-right: 12px;
+    font-weight: bold;
+    color: white;
+}
+
+.pipelinestatus.pink {
+    background-color: #8c4191;
+    border-color: #8c4191;
+}
+
+.pipelinestatus.green {
+    background-color: rgb(77, 172, 112);
+    border-color: rgb(77, 172, 112);
+}
+
+.pipelinestatus.blue {
+    background-color: rgb(71, 138, 196);
+    border-color: rgb(71, 138, 196);
+}
+
+.pipelinestatus.red {
+    background-color: var(--palette-error, rgba(184, 14, 28, 1));
+    border-color: var(--palette-error, rgba(184, 14, 28, 1));
+}
+
+.pipelinestatus.orange {
+    background-color: var(--status-warning-background, #e77e1b);
+}
+
+.pipelinestatus.white {
+    background-color: transparent;
+    color: var(--palette-black-alpha-70, #666);
+}
+
+
+@media (max-width: 400px) {
+    .flex-grid {
+        display: block;
+    }
+}

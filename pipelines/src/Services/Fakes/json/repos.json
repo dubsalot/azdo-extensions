@@ -1,0 +1,142 @@
+[
+    {
+        "id": "2b15dc30-29ae-4fe7-bc80-01e59049caf3",
+        "name": "examples",
+        "url": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/git/repositories/2b15dc30-29ae-4fe7-bc80-01e59049caf3",
+        "project": {
+            "id": "636e1096-9319-432d-ac44-cd220ff75d41",
+            "name": "Ease",
+            "description": "Code to make work easier. Better description at a later time.",
+            "url": "https://dubsalot.visualstudio.com/_apis/projects/636e1096-9319-432d-ac44-cd220ff75d41",
+            "state": 1,
+            "revision": 134,
+            "visibility": 0,
+            "lastUpdateTime": "2020-02-16T04:15:14.413Z"
+        },
+        "defaultBranch": "refs/heads/master",
+        "size": 178069,
+        "remoteUrl": "https://dubsalot.visualstudio.com/Ease/_git/examples",
+        "sshUrl": "dubsalot@vs-ssh.visualstudio.com:v3/dubsalot/Ease/examples",
+        "webUrl": "https://dubsalot.visualstudio.com/Ease/_git/examples"
+    },
+    {
+        "id": "67094c35-dce2-444d-ab12-35b18a2b962c",
+        "name": "docker-wrapper",
+        "url": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/git/repositories/67094c35-dce2-444d-ab12-35b18a2b962c",
+        "project": {
+            "id": "636e1096-9319-432d-ac44-cd220ff75d41",
+            "name": "Ease",
+            "description": "Code to make work easier. Better description at a later time.",
+            "url": "https://dubsalot.visualstudio.com/_apis/projects/636e1096-9319-432d-ac44-cd220ff75d41",
+            "state": 1,
+            "revision": 134,
+            "visibility": 0,
+            "lastUpdateTime": "2020-02-16T04:15:14.413Z"
+        },
+        "defaultBranch": "refs/heads/master",
+        "size": 22695,
+        "remoteUrl": "https://dubsalot.visualstudio.com/Ease/_git/docker-wrapper",
+        "sshUrl": "dubsalot@vs-ssh.visualstudio.com:v3/dubsalot/Ease/docker-wrapper",
+        "webUrl": "https://dubsalot.visualstudio.com/Ease/_git/docker-wrapper"
+    },
+    {
+        "id": "aa7c03a8-17d1-4881-b630-4dafebc5f3ce",
+        "name": "performance-api",
+        "url": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/git/repositories/aa7c03a8-17d1-4881-b630-4dafebc5f3ce",
+        "project": {
+            "id": "636e1096-9319-432d-ac44-cd220ff75d41",
+            "name": "Ease",
+            "description": "Code to make work easier. Better description at a later time.",
+            "url": "https://dubsalot.visualstudio.com/_apis/projects/636e1096-9319-432d-ac44-cd220ff75d41",
+            "state": 1,
+            "revision": 134,
+            "visibility": 0,
+            "lastUpdateTime": "2020-02-16T04:15:14.413Z"
+        },
+        "defaultBranch": "refs/heads/master",
+        "size": 8072,
+        "remoteUrl": "https://dubsalot.visualstudio.com/Ease/_git/performance-api",
+        "sshUrl": "dubsalot@vs-ssh.visualstudio.com:v3/dubsalot/Ease/performance-api",
+        "webUrl": "https://dubsalot.visualstudio.com/Ease/_git/performance-api"
+    },
+    {
+        "id": "11f98386-d6bd-4aee-b2bc-9c7777de3f48",
+        "name": "Ease",
+        "url": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/git/repositories/11f98386-d6bd-4aee-b2bc-9c7777de3f48",
+        "project": {
+            "id": "636e1096-9319-432d-ac44-cd220ff75d41",
+            "name": "Ease",
+            "description": "Code to make work easier. Better description at a later time.",
+            "url": "https://dubsalot.visualstudio.com/_apis/projects/636e1096-9319-432d-ac44-cd220ff75d41",
+            "state": 1,
+            "revision": 134,
+            "visibility": 0,
+            "lastUpdateTime": "2020-02-16T04:15:14.413Z"
+        },
+        "defaultBranch": "refs/heads/master",
+        "size": 7823,
+        "remoteUrl": "https://dubsalot.visualstudio.com/Ease/_git/Ease",
+        "sshUrl": "dubsalot@vs-ssh.visualstudio.com:v3/dubsalot/Ease/Ease",
+        "webUrl": "https://dubsalot.visualstudio.com/Ease/_git/Ease"
+    },
+    {
+        "id": "2f4124be-ba5c-4617-a13c-c661b72c8800",
+        "name": "powershell-modules",
+        "url": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/git/repositories/2f4124be-ba5c-4617-a13c-c661b72c8800",
+        "project": {
+            "id": "636e1096-9319-432d-ac44-cd220ff75d41",
+            "name": "Ease",
+            "description": "Code to make work easier. Better description at a later time.",
+            "url": "https://dubsalot.visualstudio.com/_apis/projects/636e1096-9319-432d-ac44-cd220ff75d41",
+            "state": 1,
+            "revision": 134,
+            "visibility": 0,
+            "lastUpdateTime": "2020-02-16T04:15:14.413Z"
+        },
+        "defaultBranch": "refs/heads/master",
+        "size": 8239,
+        "remoteUrl": "https://dubsalot.visualstudio.com/Ease/_git/powershell-modules",
+        "sshUrl": "dubsalot@vs-ssh.visualstudio.com:v3/dubsalot/Ease/powershell-modules",
+        "webUrl": "https://dubsalot.visualstudio.com/Ease/_git/powershell-modules"
+    },
+    {
+        "id": "fab3d718-173f-47a4-9455-e87859dbf368",
+        "name": "adoextensions",
+        "url": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/git/repositories/fab3d718-173f-47a4-9455-e87859dbf368",
+        "project": {
+            "id": "636e1096-9319-432d-ac44-cd220ff75d41",
+            "name": "Ease",
+            "description": "Code to make work easier. Better description at a later time.",
+            "url": "https://dubsalot.visualstudio.com/_apis/projects/636e1096-9319-432d-ac44-cd220ff75d41",
+            "state": 1,
+            "revision": 134,
+            "visibility": 0,
+            "lastUpdateTime": "2020-02-16T04:15:14.413Z"
+        },
+        "defaultBranch": "refs/heads/master",
+        "size": 207789,
+        "remoteUrl": "https://dubsalot.visualstudio.com/Ease/_git/adoextensions",
+        "sshUrl": "dubsalot@vs-ssh.visualstudio.com:v3/dubsalot/Ease/adoextensions",
+        "webUrl": "https://dubsalot.visualstudio.com/Ease/_git/adoextensions"
+    },
+    {
+        "id": "86d2528f-0b55-43b2-9593-e9f2578e2857",
+        "name": "pipelions",
+        "url": "https://dubsalot.visualstudio.com/636e1096-9319-432d-ac44-cd220ff75d41/_apis/git/repositories/86d2528f-0b55-43b2-9593-e9f2578e2857",
+        "project": {
+            "id": "636e1096-9319-432d-ac44-cd220ff75d41",
+            "name": "Ease",
+            "description": "Code to make work easier. Better description at a later time.",
+            "url": "https://dubsalot.visualstudio.com/_apis/projects/636e1096-9319-432d-ac44-cd220ff75d41",
+            "state": 1,
+            "revision": 134,
+            "visibility": 0,
+            "lastUpdateTime": "2020-02-16T04:15:14.413Z"
+        },
+        "defaultBranch": "refs/heads/master",
+        "size": 137998,
+        "remoteUrl": "https://dubsalot.visualstudio.com/Ease/_git/pipelions",
+        "sshUrl": "dubsalot@vs-ssh.visualstudio.com:v3/dubsalot/Ease/pipelions",
+        "webUrl": "https://dubsalot.visualstudio.com/Ease/_git/pipelions"
+    }
+]

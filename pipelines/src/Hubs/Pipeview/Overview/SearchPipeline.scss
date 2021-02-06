@@ -1,0 +1,58 @@
+.searchBox {
+    justify-content: center;
+    flex-direction: row;
+}
+
+.searchBox .flex-column:first-child {
+    width: 45%;
+}
+
+.devhubpanel {
+    margin: 5px;
+    width: 33%;
+    border-radius: 6px;
+    width: 33%;
+    min-width: 350px;
+}
+
+.devhubpanel.quarter {
+    width: 25%;
+}
+.devhubpanel.half {
+    width: 50%;
+    min-width: 512px;
+}
+
+.azdoListContainer .listHeader {
+    margin: 5px 20px;
+    padding: 0;
+}
+
+@media (max-width: 1024px) {
+    #fakenavcontainer {
+        display: none;
+        visibility: hidden;
+    }
+
+    .devhubpanel,
+    .devhubpanel.half,
+    .devhubpanel.quarter {
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        margin: 0px;
+    }
+    #searchpipelinecontent {
+        padding: 0px;
+        padding: 0px 0px 0px 0px !important;
+    }
+
+    .azdoPanel .nameheader {
+        margin-left: 5px !important;
+    }
+
+    .listHeader {
+        font-size: 1.06em !important;
+        font-weight: 400 !important;
+    }
+}

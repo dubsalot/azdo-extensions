@@ -1,0 +1,83 @@
+.flexPanel {
+    display: flex;
+    flex-direction: column;
+    flex:1;
+}
+
+.flexContent { 
+    display: flex;
+    padding: 5px;
+    flex-direction: row;
+    flex-basis: 100%;
+    flex: 1;
+}
+
+.flexButtons {
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    padding:5px;
+    font-size: .8em;
+}
+.flexButtons a { flex:1; text-align: center; }
+
+
+.pipelineSearchText { 
+    border-radius: 3px;
+    font-size: 1.1em;
+}
+
+.flexContent div { 
+    padding:5px;
+}
+
+
+
+.pipelineSummaryStatus
+{
+    width:10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.pipelineSummaryInfo
+{
+ width: 90%;
+}
+
+.col {
+    display: flex;
+    border-right: solid 1px var(--callout-shadow-secondary-color, #eaeaea);
+    border-bottom: solid 1px var(--callout-shadow-secondary-color, #eaeaea);
+    color: var(--palette-black-alpha-70, #666);
+}
+
+.col:last-of-type { 
+    border-right:none;
+    border-bottom: solid 1px var(--callout-shadow-secondary-color, #eaeaea);
+}
+
+.col.repos { 
+    width: 30%;
+}
+
+.col.builds { 
+    width: 70%;
+}
+
+.col.builds .flexContent { 
+    flex-direction: column;
+}
+
+
+
+.pipelineSummaryInfo span { margin: 5px;}
+.pipelineSummaryInfo .branchinfo { 
+    color: var(--text-secondary-color, #ccc);
+}
+
+.pipelineSummaryInfo .repoName {
+    color: var(--palette-neutral-100, #666);
+    font-size: 1.4em;
+}

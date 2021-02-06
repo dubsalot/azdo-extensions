@@ -1,0 +1,46 @@
+{
+    "manifestVersion": 1,
+    "id": "better-work-hub",
+    "publisher": "WesGoodwin",
+    "version": "1.2.215",
+    "name": "dubsalot pipelines",
+    "description": "A hub to show an overall view of pipelines from source code to release notes.",
+    "categories": [
+        "Azure Repos",
+        "Azure Boards",
+        "Azure Pipelines",
+        "Azure Artifacts"
+    ],
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "icons": {
+        "default": "logo-beta.png"
+    },
+    "scopes": [
+        "vso.code_full",
+        "vso.build",
+        "vso.build_execute",
+        "vso.release_manage",
+        "vso.project_manage",
+        "vso.settings_write",
+        "vso.work_full"
+    ],    
+    "content": {
+        "details": {
+            "path": "overview.md"
+        }
+    },   
+    "files": [
+        {
+            "path": "static",
+            "addressable": true
+        },
+        {
+            "path": "dist",
+            "addressable": true
+        }
+    ]
+}
