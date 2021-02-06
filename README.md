@@ -5,7 +5,11 @@ For example, we have 80 applications in my department. Each one has a repository
 
 It all starts blurring together, honestly. Granted, this is a personal preference, I'd rather have those things in one place with one search box. That's the primary goal of the extension.
 
+### Screenshot
 ![extension screenshot](docs/screens/screenshot.png)
+
+### In action
+![extension in action](docs/screens/democlip.mp4)
 
 # Getting Started
 TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
