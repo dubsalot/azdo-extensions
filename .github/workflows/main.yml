@@ -38,6 +38,8 @@ jobs:
     steps:
       - name: Set up variables to be used for the build and publish
         run: echo "EXTENSION_VERSION=$(date +"%Y.%m.%d")" >> $GITHUB_ENV
+      - name: test to see if the variable was set
+        run: echo ${{ env.EXTENSION_VERSION }}
        
   # This workflow contains a single job called "build"
   build:
@@ -56,3 +58,5 @@ jobs:
           echo $EXTENSION_PIPELINE_NAME
           echo $EXTENSION_VERSION
           echo -----------------------------
+      - name: also test here
+        run: echo ${{ env.EXTENSION_VERSION }}
