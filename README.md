@@ -48,7 +48,7 @@ These are some random links that I keep in a bookmark folder on my dev machine. 
 
 
 ### Quick Note
-if you look at my commit history, you might notice a PAT from azdo in the repo :shushing_face: It is expired. I know this is bad practice. Keep in mind this has only been for my personal use and development. The pipeline I have that publishes this extension to the market place has the real token in a secret variable. 
+If you look at my commit history, you might notice a PAT from azdo in the repo :shushing_face: It is expired. I know this is bad practice. Keep in mind this has only been for my personal use and development. The pipeline I have that publishes this extension to the market place has the real token in a secret variable. 
 
 
 
