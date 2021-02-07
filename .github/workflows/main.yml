@@ -1,3 +1,5 @@
+#TODO: change this to use output variables to share data between jobs.
+
 name: Build & Publish AzDo Extension
 
 # Just beginning to migrate my azure-pipelines.yml here
