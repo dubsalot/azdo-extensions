@@ -7,7 +7,6 @@ name: Build & Publish AzDo Extension
 # This is a basic workflow to help you get started with Actions
 env:
   PUBLISH_TOKEN: replaceme
-  EXTENSION_VERSION: replacemedate
   EXTENSION_ID: pipelinesoverviewhub
   EXTENSION_NAME: dubsalot pipelines
   EXTENSION_ICON: logo.png
@@ -41,7 +40,7 @@ jobs:
     steps:
       - id: variables
         run: | 
-          echo "::set-output name=extension_version::$(date +"%Y.%m.%d")"
+          echo "::set-output name=extension_version::$(date +"%Y.%m.%d").${{ github.run_id }}"
        
   # This workflow contains a single job called "build"
   build:
