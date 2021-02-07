@@ -5,7 +5,7 @@ name: Build & Publish AzDo Extension
 # This is a basic workflow to help you get started with Actions
 env:
   PUBLISH_TOKEN: replaceme
-  EXTENSION_VERSION: replaceme
+  EXTENSION_VERSION: date +"%Y.%m.%d"
   EXTENSION_ID: pipelinesoverviewhub
   EXTENSION_NAME: dubsalot pipelines
   EXTENSION_ICON: logo.png
