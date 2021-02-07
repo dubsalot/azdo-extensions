@@ -35,18 +35,18 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       EXTENSION_VERSION: ${{ steps.variables.outputs.extension_version }}
+      NON_PROD_NAME: ${{ steps.variables.outputs.non_prod_name }}
     steps:
-      - id: variables
+      - id: debug_output
         run: | 
-          echo "::set-output name=extension_version::$(date +"%Y.%m.%d").${{ github.run_id }}"
-          echo "github.action	     : ${{ github.action	}}"
+          echo "github.action      : ${{ github.action	}}"
           echo "github.action_path : ${{ github.action_path}}"
           echo "github.actor       : ${{ github.actor}}"
           echo "github.base_ref    : ${{ github.base_ref}}"
           echo "github.event       : ${{ github.event}}"
           echo "github.event_name  : ${{ github.event_name}}"
           echo "github.event_path  : ${{ github.event_path}}"
-          echo "github.head_ref	   : ${{ github.head_ref	}}"
+          echo "github.head_ref    : ${{ github.head_ref	}}"
           echo "github.job         : ${{ github.job}}"          
           echo "github.ref         : ${{ github.ref }}"
           echo "github.sha         : ${{ github.sha }}"
@@ -54,6 +54,23 @@ jobs:
           echo "github.token       : ${{ github.token }}"
           echo "github.workflow    : ${{ github.workflow }}"
           echo "github.workspace   : ${{ github.workspace }}"
+      
+      - id: set_alpha_if_feature
+        if: ${{ startsWith(github.ref, 'refs/head/feature') }}
+        run: |
+          echo set environment indicator to ALPHA
+          echo "::set-output name=non_prod_name::alpha"
+
+      - id: set_beta_if_develop
+        if: ${{ github.ref == 'refs/head/develop' }}
+        run: |
+          echo set environment indicator to BETA
+          echo "::set-output name=non_prod_name::beta"          
+        
+      - id: variables
+        run: | 
+          echo "::set-output name=extension_version::$(date +"%Y.%m.%d").${{ github.run_id }}"
+
           
           
        
