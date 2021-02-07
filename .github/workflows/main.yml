@@ -37,14 +37,11 @@ jobs:
   initializeVariables:
     runs-on: ubuntu-latest
     outputs:
-      EXTENSION_VERSION: "YYYY.MM.DD.buildnumber"
+      EXTENSION_VERSION: ${{ steps.variables.outputs.extension_version }}
     steps:
-      - name: Set up variables to be used for the build and publish
-        run: echo "EXTENSION_VERSION=$(date +"%Y.%m.%d")" >> $GITHUB_ENV
-      - name: set output variables
-        id: variables
+      - id: variables
         run: | 
-          echo "::set-output name=EXTENSION_VERSION::$(date +"%Y.%m.%d")"
+          echo "::set-output name=extension_version::$(date +"%Y.%m.%d")"
        
   # This workflow contains a single job called "build"
   build:
