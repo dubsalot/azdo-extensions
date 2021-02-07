@@ -64,7 +64,7 @@ jobs:
           echo $EXTENSION_VERSION
           echo -----------------------------
       - name: also test here
-        run: echo ${{ env.EXTENSION_VERSION }}
+        run: echo ${{  jobs.initializeVariables.EXTENSION_VERSION }}        
 
 
 #give me some more whitespace
