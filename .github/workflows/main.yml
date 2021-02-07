@@ -1,6 +1,23 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Build & Publish AzDo Extension
+
+# Just beginning to migrate my azure-pipelines.yml here
+
+# This is a basic workflow to help you get started with Actions
+env:
+  PUBLISH_TOKEN: replaceme
+  EXTENSION_VERSION: replaceme
+  EXTENSION_ID: pipelinesoverviewhub
+  EXTENSION_NAME: dubsalot pipelines
+  EXTENSION_ICON: logo.png
+  EXTENSION_PIPELINE_ICON: pipeline-logo.png
+  EXTENSION_HUBGROUP_ICON: logo-hub.png
+  EXTENSION_PIPELINE_NAME: Pipeline Overview
+  setPipelineVariables: replaceme
+  BRANCH_NAME: replaceme
+  NON_PROD_NAME: beta
+  
+
+
 
 # Controls when the action will run. 
 on:
@@ -25,12 +42,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          echo "-----------------------------"
+          echo $EXTENSION_PIPELINE_NAME,
+          echo "-----------------------------"
