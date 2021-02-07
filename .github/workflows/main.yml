@@ -38,6 +38,7 @@ jobs:
       NON_PROD_NAME: ${{ steps.variables.outputs.non_prod_name }}
     steps:
       - id: debug_output
+        name: display debugging info - variables
         run: | 
           echo "github.action      : ${{ github.action	}}"
           echo "github.action_path : ${{ github.action_path}}"
