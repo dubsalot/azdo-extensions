@@ -27,7 +27,6 @@ on:
     #branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
-  #meainingless change
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -37,6 +36,13 @@ jobs:
     outputs:
       EXTENSION_VERSION: ${{ steps.variables.outputs.extension_version }}
       NON_PROD_NAME: ${{ steps.variables.outputs.non_prod_name }}
+      EXTENSION_ID: ${{ steps.variables.outputs.extension_id }}
+      EXTENSION_NAME: ${{ steps.variables.outputs.extension_name }}
+      EXTENSION_ICON: ${{ steps.variables.outputs.extension_icon }}
+      EXTENSION_PIPELINE_ICON: ${{ steps.variables.outputs.extension_pipeline_icon }}
+      EXTENSION_PIPELINE_NAME: ${{ steps.variables.outputs.extension_pipeline_name }}
+      EXTENSION_HUBGROUP_ICON: ${{ steps.variables.outputs.extension_hubgroup_icon }}     
+        
     steps:
       - id: debug_output
         name: display debugging info - variables
@@ -61,17 +67,37 @@ jobs:
         if: ${{ startsWith(github.ref, 'refs/heads/feature') }}
         run: |
           echo set environment indicator to ALPHA
-          echo "::set-output name=non_prod_name::alpha"
+          export NP_NAME=alpha
 
       - id: set_beta_if_develop
         if: ${{ github.ref == 'refs/heads/develop' }}
         run: |
           echo set environment indicator to BETA
-          echo "::set-output name=non_prod_name::beta"          
+          export NP_NAME=beta         
         
+      - id: set_other_variables_np
+        name: prepare non-prod/non-release variables for the manifest/icons
+        if: ${{ github.ref == 'refs/heads/develop' || startsWith(github.ref, 'refs/heads/feature') }}
+        run: |
+         export EXTENSION_ID=$EXTENSION_ID-$NP_NAME
+         export EXTENSION_NAME=$EXTENSION_NAME-$NP_NAME
+         export EXTENSION_ICON=logo-$NP_NAME.png
+         export EXTENSION_PIPELINE_ICON=pipeline-logo-$NP_NAME.png
+         export EXTENSION_PIPELINE_NAME="$EXTENSION_PIPELINE_NAME ($NP_NAME)"
+         export EXTENSION_HUBGROUP_ICON=logo-hub-$NP_NAME.png
+
+
       - id: variables
+        name: set all output variables
         run: | 
           echo "::set-output name=extension_version::$(date +"%Y.%m.%d").${{ github.run_id }}"
+          echo "::set-output name=non_prod_name::$NP_NAME"
+          echo "::set-output name=extension_id::$EXTENSION_ID
+          echo "::set-output name=extension_name::$EXTENSION_NAME
+          echo "::set-output name=extension_icon::$EXTENSION_ICON
+          echo "::set-output name=extension_pipeline_icon::$EXTENSION_PIPELINE_ICON
+          echo "::set-output name=extension_pipeline_name::$EXTENSION_PIPELINE_NAME
+          echo "::set-output name=extension_hubgroup_icon::$EXTENSION_HUBGROUP_ICON
 
           
           
@@ -88,8 +114,15 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: also test here
-        run: echo ${{ needs.init.outputs.EXTENSION_VERSION }}        
-
+      - name: see what the variables are
+        run: |
+          echo EXTENSION_VERSION ${{ needs.init.outputs.EXTENSION_VERSION }}
+          echo NON_PROD_NAME ${{ needs.init.outputs.NON_PROD_NAME }}
+          echo EXTENSION_ID ${{ needs.init.outputs.EXTENSION_ID }}
+          echo EXTENSION_NAME ${{ needs.init.outputs.EXTENSION_NAME }}
+          echo EXTENSION_ICON ${{ needs.init.outputs.EXTENSION_ICON }}
+          echo EXTENSION_PIPELINE_ICON ${{ needs.init.outputs.EXTENSION_PIPELINE_ICON }}
+          echo EXTENSION_PIPELINE_NAME ${{ needs.init.outputs.EXTENSION_PIPELINE_NAME }}
+          echo EXTENSION_HUBGROUP_ICON ${{ needs.init.outputs.EXTENSION_HUBGROUP_ICON }}
 
 #give me some more whitespace
