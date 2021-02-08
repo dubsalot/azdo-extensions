@@ -4,17 +4,6 @@
 # ----------------------------------------------------------------------------------------------
 name: Build & Publish AzDo Extension
 
-env:
-  EXTENSION_ID: pipelinesoverviewhub
-  EXTENSION_NAME: dubsalot pipelines
-  EXTENSION_ICON: logo.png
-  EXTENSION_PIPELINE_ICON: pipeline-logo.png
-  EXTENSION_HUBGROUP_ICON: logo-hub.png
-  EXTENSION_PIPELINE_NAME: Pipeline Overview
-  setPipelineVariables: replaceme
-  BRANCH_NAME: replaceme
-  NON_PROD_NAME: beta
-  
 
 
 
@@ -104,6 +93,16 @@ jobs:
        
   # This workflow contains a single job called "build"
   build:
+    env:
+      EXTENSION_ID: pipelinesoverviewhub
+      EXTENSION_NAME: dubsalot pipelines
+      EXTENSION_ICON: logo.png
+      EXTENSION_PIPELINE_ICON: pipeline-logo.png
+      EXTENSION_HUBGROUP_ICON: logo-hub.png
+      EXTENSION_PIPELINE_NAME: Pipeline Overview
+      setPipelineVariables: replaceme
+      BRANCH_NAME: replaceme
+      NON_PROD_NAME: beta  
     name: "building ${{ needs.init.outputs.EXTENSION_VERSION }}"
     needs: init
     # The type of runner that the job will run on
