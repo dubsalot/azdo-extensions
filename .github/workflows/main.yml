@@ -71,29 +71,25 @@ jobs:
           echo set environment indicator to BETA
           echo "NON_PROD_NAME=beta" >> $GITHUB_ENV         
         
-      - id: set_other_variables_np
-        name: prepare non-prod/non-release variables for the manifest/icons
+      - id: variables
+        name: set all of the output variables
         if: ${{ github.ref == 'refs/heads/develop' || startsWith(github.ref, 'refs/heads/feature') }}
         run: |
-         export EXTENSION_ID=$EXTENSION_ID-$NON_PROD_NAME
-         export EXTENSION_NAME=$EXTENSION_NAME-$NON_PROD_NAME
-         export EXTENSION_ICON=logo-$NON_PROD_NAME.png
-         export EXTENSION_PIPELINE_ICON=pipeline-logo-$NON_PROD_NAME.png
-         export EXTENSION_PIPELINE_NAME="$EXTENSION_PIPELINE_NAME ($NON_PROD_NAME)"
-         export EXTENSION_HUBGROUP_ICON=logo-hub-$NON_PROD_NAME.png
+          export EXTENSION_ID=$EXTENSION_ID-$NON_PROD_NAME
+          export EXTENSION_NAME=$EXTENSION_NAME-$NON_PROD_NAME
+          export EXTENSION_ICON=logo-$NON_PROD_NAME.png
+          export EXTENSION_PIPELINE_ICON=pipeline-logo-$NON_PROD_NAME.png
+          export EXTENSION_PIPELINE_NAME="$EXTENSION_PIPELINE_NAME ($NON_PROD_NAME)"
+          export EXTENSION_HUBGROUP_ICON=logo-hub-$NON_PROD_NAME.png
 
-         echo debugging $NON_PROD_NAME
-         echo debugging $EXTENSION_ID
-         echo debugging $EXTENSION_NAME
-         echo debugging $EXTENSION_ICON
-         echo debugging $EXTENSION_PIPELINE_ICON
-         echo debugging $EXTENSION_PIPELINE_NAME
-         echo debugging $EXTENSION_HUBGROUP_ICON
+          echo debugging $NON_PROD_NAME
+          echo debugging $EXTENSION_ID
+          echo debugging $EXTENSION_NAME
+          echo debugging $EXTENSION_ICON
+          echo debugging $EXTENSION_PIPELINE_ICON
+          echo debugging $EXTENSION_PIPELINE_NAME
+          echo debugging $EXTENSION_HUBGROUP_ICON
 
-
-      - id: variables
-        name: set all output variables
-        run: | 
           echo "::set-output name=extension_version::$(date +"%Y.%m.%d").${{ github.run_id }}"
           echo "::set-output name=non_prod_name::$NON_PROD_NAME"
           echo "::set-output name=extension_id::$EXTENSION_ID
@@ -101,11 +97,8 @@ jobs:
           echo "::set-output name=extension_icon::$EXTENSION_ICON
           echo "::set-output name=extension_pipeline_icon::$EXTENSION_PIPELINE_ICON
           echo "::set-output name=extension_pipeline_name::$EXTENSION_PIPELINE_NAME
-          echo "::set-output name=extension_hubgroup_icon::$EXTENSION_HUBGROUP_ICON
-
-       
-          
-       
+          echo "::set-output name=extension_hubgroup_icon::$EXTENSION_HUBGROUP_ICON         
+     
   # This workflow contains a single job called "build"
   build:
     name: "building ${{ needs.init.outputs.EXTENSION_VERSION }}"
