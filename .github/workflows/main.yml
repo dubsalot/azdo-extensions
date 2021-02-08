@@ -117,7 +117,7 @@ jobs:
           echo NON_PROD_NAME "${{ needs.init.outputs.NON_PROD_NAME }}"
           echo EXTENSION_ID "${{ needs.init.outputs.EXTENSION_ID }}"
           echo EXTENSION_NAME "${{ needs.init.outputs.EXTENSION_NAME }}"
-          echo EXTENSION_ICON "${{ needs.init.outputs.EXTENSION_ICON }}"
+          echo EXTENSION_ICON "${{ needs.init.outputs.EXTENSION_ICON }}""
           echo EXTENSION_PIPELINE_ICON "${{ needs.init.outputs.EXTENSION_PIPELINE_ICON }}
           echo EXTENSION_PIPELINE_NAME "${{ needs.init.outputs.EXTENSION_PIPELINE_NAME }}"
           echo EXTENSION_HUBGROUP_ICON "${{ needs.init.outputs.EXTENSION_HUBGROUP_ICON }}"
