@@ -63,13 +63,13 @@ jobs:
         if: ${{ startsWith(github.ref, 'refs/heads/feature') }}
         run: |
           echo set environment indicator to ALPHA
-          export NON_PROD_NAME=alpha
+          echo "NON_PROD_NAME=alpha" >> $GITHUB_ENV
 
       - id: set_beta_if_develop
         if: ${{ github.ref == 'refs/heads/develop' }}
         run: |
           echo set environment indicator to BETA
-          export NON_PROD_NAME=beta         
+          echo "NON_PROD_NAME=beta" >> $GITHUB_ENV         
         
       - id: set_other_variables_np
         name: prepare non-prod/non-release variables for the manifest/icons
