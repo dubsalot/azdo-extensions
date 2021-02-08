@@ -7,5 +7,5 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: echo file path ${{ inputs.file-path }}
     - run: ls -alF ${{ inputs.file-path }}
+      shell: bash
