@@ -121,5 +121,12 @@ jobs:
           echo EXTENSION_PIPELINE_ICON "${{ needs.init.outputs.EXTENSION_PIPELINE_ICON }}"
           echo EXTENSION_PIPELINE_NAME "${{ needs.init.outputs.EXTENSION_PIPELINE_NAME }}"
           echo EXTENSION_HUBGROUP_ICON "${{ needs.init.outputs.EXTENSION_HUBGROUP_ICON }}"
+      
+      - name: see where we are and what's in here
+        run: |
+          echo $GITHUB_WORKSPACE
+          pwd
+          ls -alF
+          ls -alF $GITHUB_WORKSPACE
 
 #give me some more whitespace
