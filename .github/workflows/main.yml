@@ -92,12 +92,12 @@ jobs:
 
           echo "::set-output name=extension_version::$(date +"%Y.%m.%d").${{ github.run_id }}"
           echo "::set-output name=non_prod_name::$NON_PROD_NAME"
-          echo "::set-output name=extension_id::$EXTENSION_ID
-          echo "::set-output name=extension_name::$EXTENSION_NAME
-          echo "::set-output name=extension_icon::$EXTENSION_ICON
-          echo "::set-output name=extension_pipeline_icon::$EXTENSION_PIPELINE_ICON
-          echo "::set-output name=extension_pipeline_name::$EXTENSION_PIPELINE_NAME
-          echo "::set-output name=extension_hubgroup_icon::$EXTENSION_HUBGROUP_ICON         
+          echo "::set-output name=extension_id::$EXTENSION_ID"
+          echo "::set-output name=extension_name::$EXTENSION_NAME"
+          echo "::set-output name=extension_icon::$EXTENSION_ICON"
+          echo "::set-output name=extension_pipeline_icon::$EXTENSION_PIPELINE_ICON"
+          echo "::set-output name=extension_pipeline_name::$EXTENSION_PIPELINE_NAME"
+          echo "::set-output name=extension_hubgroup_icon::$EXTENSION_HUBGROUP_ICON"       
      
   # This workflow contains a single job called "build"
   build:
