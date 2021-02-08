@@ -98,7 +98,24 @@ jobs:
           echo "::set-output name=extension_pipeline_icon::$EXTENSION_PIPELINE_ICON"
           echo "::set-output name=extension_pipeline_name::$EXTENSION_PIPELINE_NAME"
           echo "::set-output name=extension_hubgroup_icon::$EXTENSION_HUBGROUP_ICON"       
-     
+
+  build-manifest:
+    runs-on: ubuntu-latest
+    name: Tokenize the manifest files  
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - id: tokenize_extension_file
+      uses: actions/tokenfile.yml@v1
+      with:
+        file-path: $GITHUB_WORKSPACE/pipelines/azure-devops-extension-ci.json
+    
+    - id: tokenize_hub_file
+      uses: actions/tokenfile.yml@v1
+      with:
+        file-path: $GITHUB_WORKSPACE/pipelines/src/Hubs/Pipeview/pipeview-ci.json
+
   # This workflow contains a single job called "build"
   build:
     name: "building ${{ needs.init.outputs.EXTENSION_VERSION }}"
