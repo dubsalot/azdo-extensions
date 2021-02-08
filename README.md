@@ -4,7 +4,7 @@ This project is an extension for [Azure DevOps](https://azure.microsoft.com/en-u
 ### Screenshot
 ![extension screenshot](docs/screens/screenshot.png)
 
-For example, we have 80 applications in my department. Each one has a repository, a release definition, and a build definition. We are using the classic builds/releases. The are all named with their "app code" which is a thing internal to my company. An example might be WMABC. Thefore, I will have a repo, a build defintion, and a release definition named WMABC along with 79 other applications. Each section in AzDo has it's own UI where a user can search for what they are looking for. 
+For example, we have 80 applications in my department. Each one has a repository, a release definition, and a build definition. We are using the classic builds/releases. They are all named with their "app code" which is a thing internal to my company. An example might be WMABC. Thefore, I will have a repo, a build defintion, and a release definition named WMABC along with 79 other applications. Each section in AzDo has it's own UI where a user can search for what they are looking for. 
 
 It all starts blurring together, honestly. Granted, this is a personal preference, I'd rather have those things in one place with one search box. That's the primary goal of the extension.
 
