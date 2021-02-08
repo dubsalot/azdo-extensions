@@ -11,12 +11,7 @@ env:
   EXTENSION_PIPELINE_ICON: pipeline-logo.png
   EXTENSION_HUBGROUP_ICON: logo-hub.png
   EXTENSION_PIPELINE_NAME: Pipeline Overview
-  setPipelineVariables: replaceme
-  BRANCH_NAME: replaceme
   NON_PROD_NAME: beta
-  
-
-
 
 # Controls when the action will run. 
 on:
@@ -27,29 +22,36 @@ on:
     #branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
-  #meainingless change
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   init:
+
     runs-on: ubuntu-latest
     outputs:
       EXTENSION_VERSION: ${{ steps.variables.outputs.extension_version }}
       NON_PROD_NAME: ${{ steps.variables.outputs.non_prod_name }}
+      EXTENSION_ID: ${{ steps.variables.outputs.extension_id }}
+      EXTENSION_NAME: ${{ steps.variables.outputs.extension_name }}
+      EXTENSION_ICON: ${{ steps.variables.outputs.extension_icon }}
+      EXTENSION_PIPELINE_ICON: ${{ steps.variables.outputs.extension_pipeline_icon }}
+      EXTENSION_PIPELINE_NAME: ${{ steps.variables.outputs.extension_pipeline_name }}
+      EXTENSION_HUBGROUP_ICON: ${{ steps.variables.outputs.extension_hubgroup_icon }}     
+        
     steps:
       - id: debug_output
         name: display debugging info - variables
         run: | 
-          echo "github.action      : ${{ github.action	}}"
-          echo "github.action_path : ${{ github.action_path}}"
-          echo "github.actor       : ${{ github.actor}}"
-          echo "github.base_ref    : ${{ github.base_ref}}"
-          echo "github.event       : ${{ github.event}}"
-          echo "github.event_name  : ${{ github.event_name}}"
-          echo "github.event_path  : ${{ github.event_path}}"
-          echo "github.head_ref    : ${{ github.head_ref	}}"
-          echo "github.job         : ${{ github.job}}"          
+          echo "github.action      : ${{ github.action  }}"
+          echo "github.action_path : ${{ github.action_path }}"
+          echo "github.actor       : ${{ github.actor }}"
+          echo "github.base_ref    : ${{ github.base_ref }}"
+          echo "github.event       : ${{ github.event }}"
+          echo "github.event_name  : ${{ github.event_name }}"
+          echo "github.event_path  : ${{ github.event_path }}"
+          echo "github.head_ref    : ${{ github.head_ref	 }}"
+          echo "github.job         : ${{ github.job }}"          
           echo "github.ref         : ${{ github.ref }}"
           echo "github.sha         : ${{ github.sha }}"
           echo "github.run_number  : ${{ github.run_number }}"
@@ -61,21 +63,42 @@ jobs:
         if: ${{ startsWith(github.ref, 'refs/heads/feature') }}
         run: |
           echo set environment indicator to ALPHA
-          echo "::set-output name=non_prod_name::alpha"
+          echo "NON_PROD_NAME=alpha" >> $GITHUB_ENV
 
       - id: set_beta_if_develop
         if: ${{ github.ref == 'refs/heads/develop' }}
         run: |
           echo set environment indicator to BETA
-          echo "::set-output name=non_prod_name::beta"          
+          echo "NON_PROD_NAME=beta" >> $GITHUB_ENV         
         
       - id: variables
-        run: | 
-          echo "::set-output name=extension_version::$(date +"%Y.%m.%d").${{ github.run_id }}"
+        name: set all of the output variables
+        if: ${{ github.ref == 'refs/heads/develop' || startsWith(github.ref, 'refs/heads/feature') }}
+        run: |
+          export EXTENSION_ID=$EXTENSION_ID-$NON_PROD_NAME
+          export EXTENSION_NAME=$EXTENSION_NAME-$NON_PROD_NAME
+          export EXTENSION_ICON=logo-$NON_PROD_NAME.png
+          export EXTENSION_PIPELINE_ICON=pipeline-logo-$NON_PROD_NAME.png
+          export EXTENSION_PIPELINE_NAME="$EXTENSION_PIPELINE_NAME ($NON_PROD_NAME)"
+          export EXTENSION_HUBGROUP_ICON=logo-hub-$NON_PROD_NAME.png
 
-          
-          
-       
+          echo debugging $NON_PROD_NAME
+          echo debugging $EXTENSION_ID
+          echo debugging $EXTENSION_NAME
+          echo debugging $EXTENSION_ICON
+          echo debugging $EXTENSION_PIPELINE_ICON
+          echo debugging $EXTENSION_PIPELINE_NAME
+          echo debugging $EXTENSION_HUBGROUP_ICON
+
+          echo "::set-output name=extension_version::$(date +"%Y.%m.%d").${{ github.run_id }}"
+          echo "::set-output name=non_prod_name::$NON_PROD_NAME"
+          echo "::set-output name=extension_id::$EXTENSION_ID"
+          echo "::set-output name=extension_name::$EXTENSION_NAME"
+          echo "::set-output name=extension_icon::$EXTENSION_ICON"
+          echo "::set-output name=extension_pipeline_icon::$EXTENSION_PIPELINE_ICON"
+          echo "::set-output name=extension_pipeline_name::$EXTENSION_PIPELINE_NAME"
+          echo "::set-output name=extension_hubgroup_icon::$EXTENSION_HUBGROUP_ICON"       
+     
   # This workflow contains a single job called "build"
   build:
     name: "building ${{ needs.init.outputs.EXTENSION_VERSION }}"
@@ -88,8 +111,22 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: also test here
-        run: echo ${{ needs.init.outputs.EXTENSION_VERSION }}        
-
+      - name: see what the variables are
+        run: |
+          echo EXTENSION_VERSION "${{ needs.init.outputs.EXTENSION_VERSION }}"
+          echo NON_PROD_NAME "${{ needs.init.outputs.NON_PROD_NAME }}"
+          echo EXTENSION_ID "${{ needs.init.outputs.EXTENSION_ID }}"
+          echo EXTENSION_NAME "${{ needs.init.outputs.EXTENSION_NAME }}"
+          echo EXTENSION_ICON "${{ needs.init.outputs.EXTENSION_ICON }}"
+          echo EXTENSION_PIPELINE_ICON "${{ needs.init.outputs.EXTENSION_PIPELINE_ICON }}"
+          echo EXTENSION_PIPELINE_NAME "${{ needs.init.outputs.EXTENSION_PIPELINE_NAME }}"
+          echo EXTENSION_HUBGROUP_ICON "${{ needs.init.outputs.EXTENSION_HUBGROUP_ICON }}"
+      
+      - name: see where we are and what's in here
+        run: |
+          echo $GITHUB_WORKSPACE
+          pwd
+          ls -alF
+          ls -alF $GITHUB_WORKSPACE
 
 #give me some more whitespace
