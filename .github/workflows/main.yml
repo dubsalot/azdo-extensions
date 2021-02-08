@@ -108,12 +108,12 @@ jobs:
     - uses: actions/checkout@v2
     
     - id: tokenize_extension_file
-      uses: actions/tokenfile.yml
+      uses: ./.github/workflows/token-file
       with:
         file-path: $GITHUB_WORKSPACE/pipelines/azure-devops-extension-ci.json
     
     - id: tokenize_hub_file
-      uses: actions/tokenfile.yml
+      uses: ./.github/workflows/token-file
       with:
         file-path: $GITHUB_WORKSPACE/pipelines/src/Hubs/Pipeview/pipeview-ci.json
 
