@@ -67,26 +67,26 @@ jobs:
         if: ${{ startsWith(github.ref, 'refs/heads/feature') }}
         run: |
           echo set environment indicator to ALPHA
-          export NP_NAME=alpha
+          export NON_PROD_NAME=alpha
 
       - id: set_beta_if_develop
         if: ${{ github.ref == 'refs/heads/develop' }}
         run: |
           echo set environment indicator to BETA
-          export NP_NAME=beta         
+          export NON_PROD_NAME=beta         
         
       - id: set_other_variables_np
         name: prepare non-prod/non-release variables for the manifest/icons
         if: ${{ github.ref == 'refs/heads/develop' || startsWith(github.ref, 'refs/heads/feature') }}
         run: |
-         export EXTENSION_ID=$EXTENSION_ID-$NP_NAME
-         export EXTENSION_NAME=$EXTENSION_NAME-$NP_NAME
-         export EXTENSION_ICON=logo-$NP_NAME.png
-         export EXTENSION_PIPELINE_ICON=pipeline-logo-$NP_NAME.png
-         export EXTENSION_PIPELINE_NAME="$EXTENSION_PIPELINE_NAME ($NP_NAME)"
-         export EXTENSION_HUBGROUP_ICON=logo-hub-$NP_NAME.png
+         export EXTENSION_ID=$EXTENSION_ID-$NON_PROD_NAME
+         export EXTENSION_NAME=$EXTENSION_NAME-$NON_PROD_NAME
+         export EXTENSION_ICON=logo-$NON_PROD_NAME.png
+         export EXTENSION_PIPELINE_ICON=pipeline-logo-$NON_PROD_NAME.png
+         export EXTENSION_PIPELINE_NAME="$EXTENSION_PIPELINE_NAME ($NON_PROD_NAME)"
+         export EXTENSION_HUBGROUP_ICON=logo-hub-$NON_PROD_NAME.png
 
-         echo debugging $NP_NAME
+         echo debugging $NON_PROD_NAME
          echo debugging $EXTENSION_ID
          echo debugging $EXTENSION_NAME
          echo debugging $EXTENSION_ICON
@@ -99,7 +99,7 @@ jobs:
         name: set all output variables
         run: | 
           echo "::set-output name=extension_version::$(date +"%Y.%m.%d").${{ github.run_id }}"
-          echo "::set-output name=non_prod_name::$NP_NAME"
+          echo "::set-output name=non_prod_name::$NON_PROD_NAME"
           echo "::set-output name=extension_id::$EXTENSION_ID
           echo "::set-output name=extension_name::$EXTENSION_NAME
           echo "::set-output name=extension_icon::$EXTENSION_ICON
