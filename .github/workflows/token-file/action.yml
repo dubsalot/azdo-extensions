@@ -7,5 +7,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: ls -alF ${{ inputs.file-path }}
+    - run: |
+        echo current path: $PWD
+        ls -alF ${{ inputs.file-path }}
       shell: bash
