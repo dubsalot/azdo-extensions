@@ -86,6 +86,7 @@ jobs:
          export EXTENSION_PIPELINE_NAME="$EXTENSION_PIPELINE_NAME ($NP_NAME)"
          export EXTENSION_HUBGROUP_ICON=logo-hub-$NP_NAME.png
 
+         echo debugging $NP_NAME
          echo debugging $EXTENSION_ID
          echo debugging $EXTENSION_NAME
          echo debugging $EXTENSION_ICON
