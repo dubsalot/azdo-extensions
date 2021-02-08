@@ -1,0 +1,13 @@
+name: 'Replace Tokens in File'
+description: 'Replaces tokens in file'
+inputs:
+  file-path:  
+    description: 'path of file that needs tokens replaced'
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - run: |
+        echo current path: $PWD
+        ls -alF ${{ inputs.file-path }}
+      shell: bash
