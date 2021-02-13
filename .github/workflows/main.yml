@@ -112,7 +112,7 @@ jobs:
       with:
         tokenPrefix: '<_'
         tokenSuffix: '_>'
-        files: '["$GITHUB_WORKSPACE/pipelines/azure-devops-extension-ci.json", "$GITHUB_WORKSPACE/pipelines/src/Hubs/Pipeview/pipeview-ci.json"]'
+        files: '["**/*-ci.json"]'
       env:
         EXTENSION_ID: $EXTENSION_ID
         EXTENSION_NAME: $EXTENSION_NAME
