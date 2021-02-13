@@ -129,6 +129,7 @@ jobs:
         with:
           name: extension-manifest-files      
       
+      #TODO: this takes a long time. create a docker image based on ubuntu-latest that already has it installed
       - name: Install tfx-cli utility
         run: |
           cd pipelines
@@ -173,10 +174,17 @@ jobs:
         with:
           name: extension-manifest-files
 
+      #TODO: this takes a long time. create a docker image based on ubuntu-latest that already has it installed
+      - name: Install tfx-cli utility
+        run: |
+          cd pipelines
+          npm install
+          sudo npm install -g tfx-cli          
+
       - name: Publish Token to Marketplace
         run: |
           ls -alF
-          tfx extension publish --vsix *.vsix --service-url https://marketplace.visualstudio.com/ --auth-type pat --token $(PUBLISHER_TOKEN) --share-with dubsalot
+          tfx extension publish --vsix *.vsix --service-url https://marketplace.visualstudio.com/ --auth-type pat --token $PUBLISHER_TOKEN --share-with dubsalot
 
 
 
