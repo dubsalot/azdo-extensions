@@ -106,18 +106,33 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    
-    - id: tokenize_extension_file
-      uses: ./.github/workflows/token-file
-      with:
-        file-path: $GITHUB_WORKSPACE/pipelines/azure-devops-extension-ci.json
-    
-    - id: tokenize_hub_file
-      uses: ./.github/workflows/token-file
-      with:
-        file-path: $GITHUB_WORKSPACE/pipelines/src/Hubs/Pipeview/pipeview-ci.json
 
-  # This workflow contains a single job called "build"
+    - id: token_file_1
+      uses: cschleiden/replace-tokens@v1
+        with:
+          tokenPrefix: '<_'
+          tokenSuffix: '_>'
+          files: '["$GITHUB_WORKSPACE/pipelines/azure-devops-extension-ci.json", "$GITHUB_WORKSPACE/pipelines/src/Hubs/Pipeview/pipeview-ci.json"]'
+        env:
+          EXTENSION_ID: $EXTENSION_ID
+          EXTENSION_NAME: $EXTENSION_NAME
+          EXTENSION_VERSION: $EXTENSION_VERSION
+          EXTENSION_ICON: $EXTENSION_ICON
+          EXTENSION_PIPELINE_ICON: $EXTENSION_PIPELINE_ICON
+          EXTENSION_PIPELINE_NAME: $EXTENSION_PIPELINE_NAME
+          BRANCH_NAME: ${{ github.ref }}
+          EXTENSION_HUBGROUP_ICON: $EXTENSION_HUBGROUP_ICON
+    
+    # - id: tokenize_extension_file
+    #   uses: ./.github/workflows/token-file
+    #   with:
+    #     file-path: $GITHUB_WORKSPACE/pipelines/azure-devops-extension-ci.json
+    
+    # - id: tokenize_hub_file
+    #   uses: ./.github/workflows/token-file
+    #   with:
+    #     file-path: $GITHUB_WORKSPACE/pipelines/src/Hubs/Pipeview/pipeview-ci.json
+
   build:
     name: "building ${{ needs.init.outputs.EXTENSION_VERSION }}"
     needs: [init, build-manifest]
