@@ -139,19 +139,18 @@ jobs:
       
       - name: Install tfx-cli utility
         run: |
-          ls -alF
           cd pipelines
           npm install
           sudo npm install -g tfx-cli
 
       - name: Clean up dist folder just in case
-        run: 
+        run: |
           cd pipelines
           rm -rf dist
           rm -f *.vsix
 
       - name: Run webpack
-        run:
+        run: |
           cd pipelines
           webpack --mode production --env.useFakes=false
           tfx extension create --manifest-globs azure-devops-extension-ci.json src/Hubs/**/*-ci.json
