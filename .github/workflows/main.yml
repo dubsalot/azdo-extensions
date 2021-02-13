@@ -175,7 +175,7 @@ jobs:
         with:
           name: extension-manifest-files
 
-        name: see where we are and what's in here
+      - name: see where we are and what's in here
         run: |
           echo $GITHUB_WORKSPACE
           pwd
