@@ -131,7 +131,7 @@ jobs:
         cat "$GITHUB_WORKSPACE/pipelines/src/Hubs/Pipeview/pipeview-ci.json"
         echo '======================================================================'
 
-    - id: publish manifest files
+    - id: publish-manifest-files
       uses: actions/upload-artifact@v2
       with:
         name: extension-manifest-files
