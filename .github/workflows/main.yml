@@ -133,7 +133,7 @@ jobs:
 
     - id: publish manifest files
       uses: actions/upload-artifact@v2
-        with:
+      with:
         name: extension-manifest-files
         path: "**/*-ci.json"
 
