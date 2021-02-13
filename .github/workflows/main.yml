@@ -12,10 +12,7 @@ env:
   EXTENSION_HUBGROUP_ICON: logo-hub.png
   EXTENSION_PIPELINE_NAME: Pipeline Overview
   NON_PROD_NAME: beta
-
-# Controls when the action will run. 
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [ develop, feature/* ]
   #pull_request:
@@ -23,8 +20,6 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   init:
 
@@ -82,14 +77,6 @@ jobs:
           export EXTENSION_PIPELINE_NAME="$EXTENSION_PIPELINE_NAME ($NON_PROD_NAME)"
           export EXTENSION_HUBGROUP_ICON=logo-hub-$NON_PROD_NAME.png
 
-          echo debugging $NON_PROD_NAME
-          echo debugging $EXTENSION_ID
-          echo debugging $EXTENSION_NAME
-          echo debugging $EXTENSION_ICON
-          echo debugging $EXTENSION_PIPELINE_ICON
-          echo debugging $EXTENSION_PIPELINE_NAME
-          echo debugging $EXTENSION_HUBGROUP_ICON
-
           echo "::set-output name=extension_version::$(date +"%Y.%m.%d").${{ github.run_id }}"
           echo "::set-output name=non_prod_name::$NON_PROD_NAME"
           echo "::set-output name=extension_id::$EXTENSION_ID"
@@ -107,7 +94,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - id: token_file_1
+    - id: replace_tokens_in_manifest_files
       uses: cschleiden/replace-tokens@v1
       with:
         tokenPrefix: '<_'
@@ -122,84 +109,81 @@ jobs:
         EXTENSION_PIPELINE_NAME: ${{ needs.init.outputs.EXTENSION_PIPELINE_NAME }}
         BRANCH_NAME: ${{ github.ref }}
         EXTENSION_HUBGROUP_ICON: ${{ needs.init.outputs.EXTENSION_HUBGROUP_ICON }}
-    
-    - id: check_files_for_replaced_tokens
-      run: |
-        echo '======================================================================'
-        cat "$GITHUB_WORKSPACE/pipelines/azure-devops-extension-ci.json"
-        echo '======================================================================'
-        cat "$GITHUB_WORKSPACE/pipelines/src/Hubs/Pipeview/pipeview-ci.json"
-        echo '======================================================================'
 
+    - id: publish-manifest-files
+      uses: actions/upload-artifact@v2
+      with:
+        name: extension-manifest-files
+        path: "**/*-ci.json"
 
-    
-    # - id: tokenize_extension_file
-    #   uses: ./.github/workflows/token-file
-    #   with:
-    #     file-path: $GITHUB_WORKSPACE/pipelines/azure-devops-extension-ci.json
-    
-    # - id: tokenize_hub_file
-    #   uses: ./.github/workflows/token-file
-    #   with:
-    #     file-path: $GITHUB_WORKSPACE/pipelines/src/Hubs/Pipeview/pipeview-ci.json
-
-  build:
-    name: "building ${{ needs.init.outputs.EXTENSION_VERSION }}"
+  build-vsix:
+    name: "Build VSIX ${{ needs.init.outputs.EXTENSION_VERSION }}"
     needs: [init, build-manifest]
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: see what the variables are
-        run: |
-          echo EXTENSION_VERSION "${{ needs.init.outputs.EXTENSION_VERSION }}"
-          echo NON_PROD_NAME "${{ needs.init.outputs.NON_PROD_NAME }}"
-          echo EXTENSION_ID "${{ needs.init.outputs.EXTENSION_ID }}"
-          echo EXTENSION_NAME "${{ needs.init.outputs.EXTENSION_NAME }}"
-          echo EXTENSION_ICON "${{ needs.init.outputs.EXTENSION_ICON }}"
-          echo EXTENSION_PIPELINE_ICON "${{ needs.init.outputs.EXTENSION_PIPELINE_ICON }}"
-          echo EXTENSION_PIPELINE_NAME "${{ needs.init.outputs.EXTENSION_PIPELINE_NAME }}"
-          echo EXTENSION_HUBGROUP_ICON "${{ needs.init.outputs.EXTENSION_HUBGROUP_ICON }}"
+      - name: Download manifest files
+        uses: actions/download-artifact@v2
+        with:
+          name: extension-manifest-files      
       
+      - name: Install tfx-cli utility
+        run: |
+          cd pipelines
+          npm install
+          sudo npm install -g tfx-cli
+
+      - name: Clean up dist folder just in case
+        run: |
+          cd pipelines
+          rm -rf dist
+          rm -f *.vsix
+
+      - name: Run webpack
+        run: |
+          cd pipelines
+          webpack --mode production --env.useFakes=false
+          tfx extension create --manifest-globs azure-devops-extension-ci.json src/Hubs/**/*-ci.json
+          ls -alF
+
+      - id: publish-vsix-files
+        name: Publish any VSIX files that were created
+        uses: actions/upload-artifact@v2
+        with:
+          name: extension-vsix-files
+          path: "**/*.vsix"        
+
+  publish:
+    env:
+      PUBLISHER_TOKEN: ${{ secrets.PUBLISHER_TOKEN }}
+    name: "publish to the market place"
+    needs: [build-vsix]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download manifest files
+        uses: actions/download-artifact@v2
+        with:
+          name: extension-manifest-files
+      
+      - name: Download manifest files
+        uses: actions/download-artifact@v2
+        with:
+          name: extension-manifest-files
+
       - name: see where we are and what's in here
         run: |
+          echo secret is $PUBLISHER_TOKEN
           echo $GITHUB_WORKSPACE
           pwd
           ls -alF
           ls -alF $GITHUB_WORKSPACE
 
-  build_two:
-    name: "see what UI looks like"
-    needs: [init, build-manifest]
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      - name: see where we are and what's in here
-        run: |
-          echo $GITHUB_WORKSPACE
-          pwd
-          ls -alF
-          ls -alF $GITHUB_WORKSPACE
-  
-  build_three:
-    name: "see what UI looks like part 2"
-    needs: [init, build_two]
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      - name: see where we are and what's in here
-        run: |
-          echo $GITHUB_WORKSPACE
-          pwd
-          ls -alF
-          ls -alF $GITHUB_WORKSPACE                        
 
 #give me some more whitespace
+
+
+
