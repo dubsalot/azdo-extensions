@@ -172,4 +172,19 @@ jobs:
           ls -alF
           ls -alF $GITHUB_WORKSPACE
 
+  build_two:
+    name: "see what UI looks like"
+    needs: [init, build-manifest]
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: see where we are and what's in here
+        run: |
+          echo $GITHUB_WORKSPACE
+          pwd
+          ls -alF
+          ls -alF $GITHUB_WORKSPACE          
+
 #give me some more whitespace
