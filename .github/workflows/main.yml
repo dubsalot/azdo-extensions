@@ -123,6 +123,16 @@ jobs:
         BRANCH_NAME: ${{ github.ref }}
         EXTENSION_HUBGROUP_ICON: $EXTENSION_HUBGROUP_ICON
     
+    - id: check_files_for_replaced_tokens
+      run: |
+        echo '======================================================================'
+        cat "$GITHUB_WORKSPACE/pipelines/azure-devops-extension-ci.json"
+        echo '======================================================================'
+        cat "$GITHUB_WORKSPACE/pipelines/src/Hubs/Pipeview/pipeview-ci.json"
+        echo '======================================================================'
+
+
+    
     # - id: tokenize_extension_file
     #   uses: ./.github/workflows/token-file
     #   with:
