@@ -114,14 +114,14 @@ jobs:
         tokenSuffix: '_>'
         files: '["**/*-ci.json"]'
       env:
-        EXTENSION_ID: $EXTENSION_ID
-        EXTENSION_NAME: $EXTENSION_NAME
-        EXTENSION_VERSION: $EXTENSION_VERSION
-        EXTENSION_ICON: $EXTENSION_ICON
-        EXTENSION_PIPELINE_ICON: $EXTENSION_PIPELINE_ICON
-        EXTENSION_PIPELINE_NAME: $EXTENSION_PIPELINE_NAME
+        EXTENSION_ID: ${{ needs.init.outputs.EXTENSION_ID }}
+        EXTENSION_NAME: ${{ needs.init.outputs.EXTENSION_NAME }}
+        EXTENSION_VERSION: ${{ needs.init.outputs.EXTENSION_VERSION }} 
+        EXTENSION_ICON: ${{ needs.init.outputs.EXTENSION_ICON }}
+        EXTENSION_PIPELINE_ICON: ${{ needs.init.outputs.EXTENSION_PIPELINE_ICON }}
+        EXTENSION_PIPELINE_NAME: ${{ needs.init.outputs.EXTENSION_PIPELINE_NAME }}
         BRANCH_NAME: ${{ github.ref }}
-        EXTENSION_HUBGROUP_ICON: $EXTENSION_HUBGROUP_ICON
+        EXTENSION_HUBGROUP_ICON: ${{ needs.init.outputs.EXTENSION_HUBGROUP_ICON }}
     
     - id: check_files_for_replaced_tokens
       run: |
