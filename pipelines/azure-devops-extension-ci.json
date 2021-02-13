@@ -34,7 +34,7 @@
         {
             "id": "dubsalot-hub-groub",
             "type": "ms.vss-web.hub-group",
-            "description": "Adds a 'Pipelions' hub to the Work hub group.",
+            "description": "Adds a 'Pipelions Overview' hub to the Work hub group.",
             "targets": [
                 "ms.vss-web.project-hub-groups-collection"
             ],
