@@ -12,10 +12,7 @@ env:
   EXTENSION_HUBGROUP_ICON: logo-hub.png
   EXTENSION_PIPELINE_NAME: Pipeline Overview
   NON_PROD_NAME: beta
-
-# Controls when the action will run. 
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [ develop, feature/* ]
   #pull_request:
@@ -23,8 +20,6 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   init:
 
