@@ -173,13 +173,10 @@ jobs:
         with:
           name: extension-manifest-files
 
-      - name: see where we are and what's in here
+      - name: Publish Token to Marketplace
         run: |
-          echo secret is $PUBLISHER_TOKEN
-          echo $GITHUB_WORKSPACE
-          pwd
           ls -alF
-          ls -alF $GITHUB_WORKSPACE
+          tfx extension publish --vsix *.vsix --service-url https://marketplace.visualstudio.com/ --auth-type pat --token $(PUBLISHER_TOKEN) --share-with dubsalot
 
 
 
