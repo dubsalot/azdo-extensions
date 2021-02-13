@@ -109,14 +109,6 @@ jobs:
         EXTENSION_PIPELINE_NAME: ${{ needs.init.outputs.EXTENSION_PIPELINE_NAME }}
         BRANCH_NAME: ${{ github.ref }}
         EXTENSION_HUBGROUP_ICON: ${{ needs.init.outputs.EXTENSION_HUBGROUP_ICON }}
-    
-    - id: check_files_for_replaced_tokens
-      run: |
-        echo '======================================================================'
-        cat "$GITHUB_WORKSPACE/pipelines/azure-devops-extension-ci.json"
-        echo '======================================================================'
-        cat "$GITHUB_WORKSPACE/pipelines/src/Hubs/Pipeview/pipeview-ci.json"
-        echo '======================================================================'
 
     - id: publish-manifest-files
       uses: actions/upload-artifact@v2
@@ -164,6 +156,8 @@ jobs:
           path: "**/*.vsix"        
 
   publish:
+    env:
+      PUBLISHER_TOKEN: ${{ secrets.PUBLISHER_TOKEN }}
     name: "publish to the market place"
     needs: [build-vsix]
     runs-on: ubuntu-latest
@@ -173,9 +167,15 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: extension-manifest-files
+      
+      - name: Download manifest files
+        uses: actions/download-artifact@v2
+        with:
+          name: extension-manifest-files
 
       - name: see where we are and what's in here
         run: |
+          echo secret is $PUBLISHER_TOKEN
           echo $GITHUB_WORKSPACE
           pwd
           ls -alF
