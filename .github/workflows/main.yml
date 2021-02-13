@@ -131,8 +131,12 @@ jobs:
         cat "$GITHUB_WORKSPACE/pipelines/src/Hubs/Pipeview/pipeview-ci.json"
         echo '======================================================================'
 
+    - id: publish manifest files
+      uses: actions/upload-artifact@v2
+        with:
+        name: extension-manifest-files
+        path: "**/*-ci.json"
 
-    
     # - id: tokenize_extension_file
     #   uses: ./.github/workflows/token-file
     #   with:
