@@ -106,18 +106,43 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    
-    - id: tokenize_extension_file
-      uses: ./.github/workflows/token-file
-      with:
-        file-path: $GITHUB_WORKSPACE/pipelines/azure-devops-extension-ci.json
-    
-    - id: tokenize_hub_file
-      uses: ./.github/workflows/token-file
-      with:
-        file-path: $GITHUB_WORKSPACE/pipelines/src/Hubs/Pipeview/pipeview-ci.json
 
-  # This workflow contains a single job called "build"
+    - id: token_file_1
+      uses: cschleiden/replace-tokens@v1
+      with:
+        tokenPrefix: '<_'
+        tokenSuffix: '_>'
+        files: '["**/*-ci.json"]'
+      env:
+        EXTENSION_ID: ${{ needs.init.outputs.EXTENSION_ID }}
+        EXTENSION_NAME: ${{ needs.init.outputs.EXTENSION_NAME }}
+        EXTENSION_VERSION: ${{ needs.init.outputs.EXTENSION_VERSION }} 
+        EXTENSION_ICON: ${{ needs.init.outputs.EXTENSION_ICON }}
+        EXTENSION_PIPELINE_ICON: ${{ needs.init.outputs.EXTENSION_PIPELINE_ICON }}
+        EXTENSION_PIPELINE_NAME: ${{ needs.init.outputs.EXTENSION_PIPELINE_NAME }}
+        BRANCH_NAME: ${{ github.ref }}
+        EXTENSION_HUBGROUP_ICON: ${{ needs.init.outputs.EXTENSION_HUBGROUP_ICON }}
+    
+    - id: check_files_for_replaced_tokens
+      run: |
+        echo '======================================================================'
+        cat "$GITHUB_WORKSPACE/pipelines/azure-devops-extension-ci.json"
+        echo '======================================================================'
+        cat "$GITHUB_WORKSPACE/pipelines/src/Hubs/Pipeview/pipeview-ci.json"
+        echo '======================================================================'
+
+
+    
+    # - id: tokenize_extension_file
+    #   uses: ./.github/workflows/token-file
+    #   with:
+    #     file-path: $GITHUB_WORKSPACE/pipelines/azure-devops-extension-ci.json
+    
+    # - id: tokenize_hub_file
+    #   uses: ./.github/workflows/token-file
+    #   with:
+    #     file-path: $GITHUB_WORKSPACE/pipelines/src/Hubs/Pipeview/pipeview-ci.json
+
   build:
     name: "building ${{ needs.init.outputs.EXTENSION_VERSION }}"
     needs: [init, build-manifest]
@@ -146,5 +171,35 @@ jobs:
           pwd
           ls -alF
           ls -alF $GITHUB_WORKSPACE
+
+  build_two:
+    name: "see what UI looks like"
+    needs: [init, build-manifest]
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: see where we are and what's in here
+        run: |
+          echo $GITHUB_WORKSPACE
+          pwd
+          ls -alF
+          ls -alF $GITHUB_WORKSPACE
+  
+  build_three:
+    name: "see what UI looks like part 2"
+    needs: [init, build_two]
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: see where we are and what's in here
+        run: |
+          echo $GITHUB_WORKSPACE
+          pwd
+          ls -alF
+          ls -alF $GITHUB_WORKSPACE                        
 
 #give me some more whitespace
