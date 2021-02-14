@@ -16,31 +16,6 @@ export default class RepoPanel extends React.Component<{ model: IRepoSearchResul
         super(props);
     }
 
-
-    // nav = async (url:string, ctrlKey: boolean) => {
-    //     let navService = await shimmy.serviceContext.sdk.getService<IHostNavigationService>(CommonServiceIds.HostNavigationService);
-
-    //     if(navService)
-    //     {
-    //         if(ctrlKey)
-    //         {
-    //             navService.openNewWindow(url, "");
-    //         }            
-    //         else{
-    //             navService.navigate(url);
-    //         }
-    //     }
-    //     else{
-    //         if(ctrlKey)
-    //         {
-    //             window.open(url);
-    //         }            
-    //         else{
-    //             window.location.href = url;
-    //         }            
-    //     }
-    // }
-
     public render(): JSX.Element {
 
 
