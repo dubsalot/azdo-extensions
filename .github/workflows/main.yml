@@ -169,16 +169,15 @@ jobs:
         with:
           name: extension-manifest-files
       
-      - name: Download manifest files
+      - name: Download visx files
         uses: actions/download-artifact@v2
         with:
-          name: extension-manifest-files
+          name: extension-vsix-files
 
       #TODO: this takes a long time. create a docker image based on ubuntu-latest that already has it installed
       - name: Install tfx-cli utility
         run: |
           cd pipelines
-          npm install
           sudo npm install -g tfx-cli          
 
       - name: Publish Token to Marketplace
