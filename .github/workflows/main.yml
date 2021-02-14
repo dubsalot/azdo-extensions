@@ -147,7 +147,12 @@ jobs:
           cd pipelines
           webpack --mode production --env.useFakes=false
           tfx extension create --manifest-globs azure-devops-extension-ci.json src/Hubs/**/*-ci.json
-          ls -alF
+          status=$?
+          
+          if (( status != 0 )); then
+            echo "::error::failed to create vsix"
+            exit 1
+          fi
 
       - id: publish-vsix-files
         name: Publish any VSIX files that were created
@@ -179,6 +184,12 @@ jobs:
         run: |
           cd pipelines
           tfx extension publish --vsix *.vsix --service-url https://marketplace.visualstudio.com/ --auth-type pat --token $PUBLISHER_TOKEN --share-with dubsalot
+          status=$?
+          
+          if (( status != 0 )); then
+            echo "::error::failed to publish vsix"
+            exit 1
+          fi          
 
 
 
