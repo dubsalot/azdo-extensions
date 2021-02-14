@@ -4,7 +4,7 @@
     "publisher": "WesGoodwin",
     "version": "1.2.215",
     "name": "dubsalot pipelines",
-    "description": "A hub to show an overall view of pipelines from source code to release notes.",
+    "description": "A hub to show an overall view of pipelines from source code to release",
     "categories": [
         "Azure Repos",
         "Azure Boards",
