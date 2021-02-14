@@ -69,14 +69,19 @@ jobs:
         name: set extension environment indicator to beta
         if: ${{ github.ref == 'refs/heads/develop' }}
         run: |
-          echo set environment indicator to BETA
+          echo set environment indicator to BETA 1
           echo "EXTENSION_ID='$EXTENSION_ID-beta'" >> $GITHUB_ENV
+          echo set environment indicator to BETA 2
           echo "EXTENSION_NAME='$EXTENSION_NAME-beta'" >> $GITHUB_ENV
+          echo set environment indicator to BETA 3
           echo "EXTENSION_ICON='logo-beta.png'" >> $GITHUB_ENV
+          echo set environment indicator to BETA 4
           echo "EXTENSION_PIPELINE_ICON='pipeline-logo-beta.png'" >> $GITHUB_ENV
+          echo set environment indicator to BETA 5
           echo "EXTENSION_PIPELINE_NAME="'$EXTENSION_PIPELINE_NAME (beta)'" >> $GITHUB_ENV
+          echo set environment indicator to BETA 6
           echo "EXTENSION_HUBGROUP_ICON='logo-hub-beta.png'" >> $GITHUB_ENV
-          echo "THIS IS A BETA"   
+          echo set environment indicator to BETA 7
 
       - id: variables
         name: set all variables
