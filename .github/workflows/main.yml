@@ -4,14 +4,6 @@
 # ----------------------------------------------------------------------------------------------
 name: Build & Publish AzDo Extension
 
-env:
-  EXTENSION_ID: pipelinesoverviewhub
-  EXTENSION_NAME: dubsalot pipelines
-  EXTENSION_ICON: logo.png
-  EXTENSION_PIPELINE_ICON: pipeline-logo.png
-  EXTENSION_HUBGROUP_ICON: logo-hub.png
-  EXTENSION_PIPELINE_NAME: Pipeline Overview
-  NON_PROD_NAME: beta
 on:
   push:
     branches: [ develop, feature/* ]
@@ -22,11 +14,16 @@ on:
   workflow_dispatch:
 jobs:
   init:
-
     runs-on: ubuntu-latest
+    env:
+      EXTENSION_ID: pipelinesoverviewhub
+      EXTENSION_NAME: dubsalot pipelines
+      EXTENSION_ICON: logo.png
+      EXTENSION_PIPELINE_ICON: pipeline-logo.png
+      EXTENSION_HUBGROUP_ICON: logo-hub.png
+      EXTENSION_PIPELINE_NAME: Pipeline Overview
     outputs:
       EXTENSION_VERSION: ${{ steps.variables.outputs.extension_version }}
-      NON_PROD_NAME: ${{ steps.variables.outputs.non_prod_name }}
       EXTENSION_ID: ${{ steps.variables.outputs.extension_id }}
       EXTENSION_NAME: ${{ steps.variables.outputs.extension_name }}
       EXTENSION_ICON: ${{ steps.variables.outputs.extension_icon }}
@@ -54,31 +51,33 @@ jobs:
           echo "github.workflow    : ${{ github.workflow }}"
           echo "github.workspace   : ${{ github.workspace }}"
       
-      - id: set_alpha_if_feature
-        if: ${{ startsWith(github.ref, 'refs/heads/feature') }}
+      - id: set_alpha_if_not_dev_and_not_main
+        name: set extension environment indicator to alpha
+        if: ${{ github.ref != 'refs/heads/develop' && github.ref != 'refs/heads/main' }}
         run: |
-          echo set environment indicator to ALPHA
-          echo "NON_PROD_NAME=alpha" >> $GITHUB_ENV
+          echo "EXTENSION_ID=$EXTENSION_ID-alpha" >> $GITHUB_ENV
+          echo "EXTENSION_NAME=$EXTENSION_NAME-alpha" >> $GITHUB_ENV
+          echo "EXTENSION_ICON=logo-alpha.png" >> $GITHUB_ENV
+          echo "EXTENSION_PIPELINE_ICON=pipeline-logo-alpha.png" >> $GITHUB_ENV
+          echo "EXTENSION_PIPELINE_NAME=$EXTENSION_PIPELINE_NAME ALPHA" >> $GITHUB_ENV
+          echo "EXTENSION_HUBGROUP_ICON=logo-hub-alpha.png" >> $GITHUB_ENV
 
       - id: set_beta_if_develop
+        name: set extension environment indicator to beta
         if: ${{ github.ref == 'refs/heads/develop' }}
         run: |
-          echo set environment indicator to BETA
-          echo "NON_PROD_NAME=beta" >> $GITHUB_ENV         
-        
+          echo "EXTENSION_ID=$EXTENSION_ID-beta" >> $GITHUB_ENV
+          echo "EXTENSION_NAME=$EXTENSION_NAME-beta" >> $GITHUB_ENV
+          echo "EXTENSION_ICON=logo-beta.png" >> $GITHUB_ENV
+          echo "EXTENSION_PIPELINE_ICON=pipeline-logo-beta.png" >> $GITHUB_ENV
+          echo "EXTENSION_PIPELINE_NAME=$EXTENSION_PIPELINE_NAME BETA" >> $GITHUB_ENV
+          echo "EXTENSION_HUBGROUP_ICON=logo-hub-beta.png" >> $GITHUB_ENV
+
       - id: variables
         name: set all of the output variables
         #if: ${{ github.ref == 'refs/heads/develop' || startsWith(github.ref, 'refs/heads/feature') }}
         run: |
-          export EXTENSION_ID=$EXTENSION_ID-$NON_PROD_NAME
-          export EXTENSION_NAME=$EXTENSION_NAME-$NON_PROD_NAME
-          export EXTENSION_ICON=logo-$NON_PROD_NAME.png
-          export EXTENSION_PIPELINE_ICON=pipeline-logo-$NON_PROD_NAME.png
-          export EXTENSION_PIPELINE_NAME="$EXTENSION_PIPELINE_NAME ($NON_PROD_NAME)"
-          export EXTENSION_HUBGROUP_ICON=logo-hub-$NON_PROD_NAME.png
-
           echo "::set-output name=extension_version::$(date +"%Y.%-m.%-d").${{ github.run_id }}"
-          echo "::set-output name=non_prod_name::$NON_PROD_NAME"
           echo "::set-output name=extension_id::$EXTENSION_ID"
           echo "::set-output name=extension_name::$EXTENSION_NAME"
           echo "::set-output name=extension_icon::$EXTENSION_ICON"
@@ -123,7 +122,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
       - name: Download manifest files
         uses: actions/download-artifact@v2
         with:
