@@ -54,7 +54,7 @@ jobs:
       
       - id: set_alpha_if_not_dev_and_not_main
         name: set extension environment indicator to alpha
-        if: ${{ github.ref != 'refs/heads/develop' && github.ref != 'refs/heads/develop' }}
+        if: ${{ github.ref != 'refs/heads/develop' && github.ref != 'refs/heads/main' }}
         run: |
           echo set environment indicator to ALPHA
           echo "EXTENSION_ID=$EXTENSION_ID-alpha" >> $GITHUB_ENV
@@ -78,7 +78,7 @@ jobs:
           echo set environment indicator to BETA 4
           echo "EXTENSION_PIPELINE_ICON='pipeline-logo-beta.png'" >> $GITHUB_ENV
           echo set environment indicator to BETA 5
-          echo "EXTENSION_PIPELINE_NAME="'$EXTENSION_PIPELINE_NAME BETA'" >> $GITHUB_ENV
+          echo "EXTENSION_PIPELINE_NAME=$EXTENSION_PIPELINE_NAME BETA" >> $GITHUB_ENV
           echo set environment indicator to BETA 6
           echo "EXTENSION_HUBGROUP_ICON='logo-hub-beta.png'" >> $GITHUB_ENV
           echo set environment indicator to BETA 7
