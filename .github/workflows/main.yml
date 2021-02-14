@@ -61,7 +61,7 @@ jobs:
           echo "EXTENSION_NAME=$EXTENSION_NAME-alpha" >> $GITHUB_ENV
           echo "EXTENSION_ICON=logo-alpha.png" >> $GITHUB_ENV
           echo "EXTENSION_PIPELINE_ICON=pipeline-logo-alpha.png" >> $GITHUB_ENV
-          echo "EXTENSION_PIPELINE_NAME="$EXTENSION_PIPELINE_NAME (alpha)"
+          echo "EXTENSION_PIPELINE_NAME="$EXTENSION_PIPELINE_NAME (alpha)" >> $GITHUB_ENV
           echo "EXTENSION_HUBGROUP_ICON=logo-hub-alpha.png" >> $GITHUB_ENV   
 
       - id: set_beta_if_develop
@@ -73,7 +73,7 @@ jobs:
           echo "EXTENSION_NAME=$EXTENSION_NAME-beta" >> $GITHUB_ENV
           echo "EXTENSION_ICON=logo-beta.png" >> $GITHUB_ENV
           echo "EXTENSION_PIPELINE_ICON=pipeline-logo-beta.png" >> $GITHUB_ENV
-          echo "EXTENSION_PIPELINE_NAME="$EXTENSION_PIPELINE_NAME (beta)"
+          echo "EXTENSION_PIPELINE_NAME="$EXTENSION_PIPELINE_NAME (beta)" >> $GITHUB_ENV
           echo "EXTENSION_HUBGROUP_ICON=logo-hub-beta.png" >> $GITHUB_ENV          
 
       - id: variables
