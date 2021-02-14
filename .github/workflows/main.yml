@@ -74,8 +74,8 @@ jobs:
           echo "EXTENSION_HUBGROUP_ICON=logo-hub-beta.png" >> $GITHUB_ENV
 
       - id: variables
-        name: set all variables
-        if: ${{ github.ref == 'refs/heads/develop' || startsWith(github.ref, 'refs/heads/feature') }}
+        name: set all of the output variables
+        #if: ${{ github.ref == 'refs/heads/develop' || startsWith(github.ref, 'refs/heads/feature') }}
         run: |
           echo "::set-output name=extension_version::$(date +"%Y.%-m.%-d").${{ github.run_id }}"
           echo "::set-output name=extension_id::$EXTENSION_ID"
