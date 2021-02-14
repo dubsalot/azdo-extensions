@@ -183,6 +183,7 @@ jobs:
 
       - name: Publish Token to Marketplace
         run: |
+          cd pipelines
           ls -alF
           tfx extension publish --vsix *.vsix --service-url https://marketplace.visualstudio.com/ --auth-type pat --token $PUBLISHER_TOKEN --share-with dubsalot
 
