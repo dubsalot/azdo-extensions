@@ -77,7 +77,7 @@ jobs:
           export EXTENSION_PIPELINE_NAME="$EXTENSION_PIPELINE_NAME ($NON_PROD_NAME)"
           export EXTENSION_HUBGROUP_ICON=logo-hub-$NON_PROD_NAME.png
 
-          echo "::set-output name=extension_version::$(date +"%Y.%m.%d").${{ github.run_id }}"
+          echo "::set-output name=extension_version::$(date +"%Y.%-m.%-d").${{ github.run_id }}"
           echo "::set-output name=non_prod_name::$NON_PROD_NAME"
           echo "::set-output name=extension_id::$EXTENSION_ID"
           echo "::set-output name=extension_name::$EXTENSION_NAME"
@@ -129,6 +129,7 @@ jobs:
         with:
           name: extension-manifest-files      
       
+      #TODO: this takes a long time. create a docker image based on ubuntu-latest that already has it installed
       - name: Install tfx-cli utility
         run: |
           cd pipelines
@@ -146,7 +147,12 @@ jobs:
           cd pipelines
           webpack --mode production --env.useFakes=false
           tfx extension create --manifest-globs azure-devops-extension-ci.json src/Hubs/**/*-ci.json
-          ls -alF
+          status=$?
+          
+          if (( status != 0 )); then
+            echo "::error::failed to create vsix"
+            exit 1
+          fi
 
       - id: publish-vsix-files
         name: Publish any VSIX files that were created
@@ -163,23 +169,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Download manifest files
+      - name: Download visx files
         uses: actions/download-artifact@v2
         with:
-          name: extension-manifest-files
-      
-      - name: Download manifest files
-        uses: actions/download-artifact@v2
-        with:
-          name: extension-manifest-files
+          name: extension-vsix-files
 
-      - name: see where we are and what's in here
+      #TODO: this takes a long time. create a docker image based on ubuntu-latest that already has it installed
+      - name: Install tfx-cli utility
         run: |
-          echo secret is $PUBLISHER_TOKEN
-          echo $GITHUB_WORKSPACE
-          pwd
-          ls -alF
-          ls -alF $GITHUB_WORKSPACE
+          cd pipelines
+          sudo npm install -g tfx-cli          
+
+      - name: Publish Token to Marketplace
+        run: |
+          cd pipelines
+          tfx extension publish --vsix *.vsix --service-url https://marketplace.visualstudio.com/ --auth-type pat --token $PUBLISHER_TOKEN --share-with dubsalot
+          status=$?
+          
+          if (( status != 0 )); then
+            echo "::error::failed to publish vsix"
+            exit 1
+          fi          
 
 
 

@@ -86,20 +86,6 @@ class PipeviewContent extends React.Component<{}, IHubContentState> {
                 <Header title="Search Pipelines and Repos"
                     description={headerDescription}
                     titleSize={TitleSize.Large} />
-                {
-                
-                /* 
-                //TODO: after this is pushed up to master, implement feature flags for the other sections & tabs
-
-                <TabBar
-                    onSelectedTabChanged={this.onSelectedTabChanged}
-                    selectedTabId={selectedTabId}
-                    tabSize={useCompactPivots ? TabSize.Compact : TabSize.Tall}>
-
-                    <Tab name="Search" id="searchpipelines" />
-                    <Tab name="Pipeline Summary" id="PipelineList" />
-                    <Tab name="Settings" id="settings" />
-                </TabBar> */}
                 {this.getPageContent()}
                 <ExtensionVersion />
             </Page>

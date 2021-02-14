@@ -4,18 +4,11 @@
     "publisher": "WesGoodwin",
     "version": "<_EXTENSION_VERSION_>",
     "name": "<_EXTENSION_NAME_>",
-    "description": "A hub to show an overall view of pipelines from source code to release notes.",
+    "description": "A hub to show an overall view of pipelines from source code to release",
     "repository": {
         "type": "git",
-        "uri": "https://dubsalot.visualstudio.com/Ease/_git/azdo-extensions?path=%2F&version=GB<_BRANCH_NAME_>&_a=contents"
+        "uri": "https://github.com/dubsalot/azdo-extensions"
     },
-    "badges": [
-        {
-            "href": "https://dubsalot.visualstudio.com/Ease/_apis/build/status/Azure%20DevOps%20Extensions/azdo-extensions?branchName=<_BRANCH_NAME_>",
-            "uri": "https://dubsalot.visualstudio.com/Ease/_apis/build/status/Azure%20DevOps%20Extensions/azdo-extensions?branchName=<_BRANCH_NAME_>",
-            "description": "Pipeline Badge for Pipeline Overview"
-        }
-    ],       
     "categories": [
         "Azure Repos",
         "Azure Boards",
@@ -34,7 +27,7 @@
         {
             "id": "dubsalot-hub-groub",
             "type": "ms.vss-web.hub-group",
-            "description": "Adds a 'Pipelions Overview' hub to the Work hub group.",
+            "description": "Adds a 'Pipelines Overview' hub to the Work hub group.",
             "targets": [
                 "ms.vss-web.project-hub-groups-collection"
             ],
