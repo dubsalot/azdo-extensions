@@ -68,7 +68,7 @@ jobs:
         
       - id: variables
         name: set all of the output variables
-        if: ${{ github.ref == 'refs/heads/develop' || startsWith(github.ref, 'refs/heads/feature') }}
+        #if: ${{ github.ref == 'refs/heads/develop' || startsWith(github.ref, 'refs/heads/feature') }}
         run: |
           export EXTENSION_ID=$EXTENSION_ID-$NON_PROD_NAME
           export EXTENSION_NAME=$EXTENSION_NAME-$NON_PROD_NAME
