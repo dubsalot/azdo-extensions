@@ -1,6 +1,3 @@
-# Quick Note
-I set the repo back to private, but I can set it back if you request it.
-
 # Introduction 
 This project is an extension for [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/) henceforth referred to as azdo or AzDo. The goal is to consolidate some of the azdo screens into one hub. AzDo is a great product made out of 100% awesome, *but* I find navigating some of the screens that I use all day everyday to be annoying. Granted, some of this is because of the way my company organizes and names its projects.
 
